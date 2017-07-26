@@ -2,16 +2,17 @@
    
     $('form').on('submit', function(e){
         e.preventDefault(); 
-        console.log($('input').val())
+        console.log("The zip code is: " + $('input').val())
         makeApiCall($('input').val())
+        //var makeApiCall = parseInt($(this).val());
     })
 
 
 });
-    makeApiCall(97219)
+   // makeApiCall(97219)
 //http://api.petfinder.com/pet.getRandom?format=json&key=a4d4d400939b10647da19b7593286b34&animal=dog&output=basic
 function makeApiCall(zipcode){
-
+//http://api.petfinder.com/shelter.get?id=SD08&format=json&key=a4d4d400939b10647da19b7593286b34&animal=smallfurry&output=basic
  //var zipcode = (zipcode);
     var url = `http://api.petfinder.com/pet.find?location=${zipcode}&key=a4d4d400939b10647da19b7593286b34&output=full&format=json`;
     $.ajax({
@@ -30,9 +31,14 @@ function makeApiCall(zipcode){
             
 
                 console.log(pet,e) 
+                console.log(pet.shelterId.$t)
                 let name = pet.name.$t;
                 html += '<h4>'+name+'</h4>'
+
+                //let breed = pet.breed.$t;
+                //html += `<h5>${breed}</h5>`
                 let description = pet.description.$t;
+                html += `<h5>${description}</h5>` 
                 //html += '<h5>'+description+ '</h5>'
                 //html +='<img src ="http://photos.petfinder.com/photos/pets/38751785/1/?bust=1499974270&width=50&-t.jpg"/>'
                 //html += '<img src ="http://photos.petfinder.com/photos">'
