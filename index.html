@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
 	<link rel= "https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css">
@@ -9,55 +10,62 @@
 </head>
 
 <body>
-	<section id="home">
-		<div id=top">
+	<div id="home">
+		<div id="top">
 			<form id ="search-pets" action="search-results.html">
    			<Label id="find">Find Adoptable Dogs</Label>
    			<input type="text" pattern="[0-9]{5}" placeholder= "Enter zip code" title="Five digit zip code">
 			<input type="submit" value="Submit">
 			</form>
 		</div>
-		
 		<img id="container" src="https://image.ibb.co/gD9kx5/IMG_2941_JPG.jpg">
-		<!--<img id="container" src="https://image.ibb.co/h6C7c5/boxer.jpg" alt="boxer" border="0">-->
-			 <h2>Connecting people to rescue organizatons and adoptable dogs in the United States.</h2>
-		
-       </section>
+			 <span id="cover"><h2>Connecting people to rescue organizatons and adoptable dogs in the United States.</h2></span>
+		</div>
+	<div id="map"></div>
+	
 
-    <section id="map">
-	<!--<h3>Find Available Rescue Dogs in the United States</h3>
-
-       </section>-->
-
-    </section>
-
-    <div id="advanced">
 	<h2>Advanced Search</h2>
-		<form action="">
-	 	<span>Gender:<br>
-  			<input type="radio" name="gender" value="male"> Male<br>
-  			<input type="radio" name="gender" value="female"> Female<br></span>
-  		<span>Age:<br>
-  			<input type="radio" name="age" value="Baby">Baby<br>
-  			<input type="radio" name="age" value="Young">Young<br>
-  			<input type="radio" name="age" value="Adult">Adult<br>
-  			<input type="radio" name="age" value="Senior">Senior<br></span>
-		<span>Size:<br>
-  			<input type="radio" name="size" value= "Small">Small<br>
-  			<input type="radio" name="size" value="Medium">Medium<br>
-  			<input type="radio" name="size" value="Large">Large<br>
-  			<input type="radio" name="size" value="Giant">Giant<br></span>
+		<h3>Uncecked all that do not apply to narrow your search</h3>
 
-  		<div class="dropdown">
+	<ul>
+	 	<li id='gender'><a> Gender: </a>
+	 	<ul>
+  			<li><input type="checkbox" name="gender" value="male" checked> Male </a></li>
+  			<li><input type="checkbox" name="gender" value="female" checked> Female</li>
+  		</ul>
+  		</li>
+  		<li id='age'><a> Age: </a>
+  			<ul>
+  			<li><input type="checkbox" name="age" value="Baby" checked>Baby</li>
+  			<li><input type="checkbox" name="age" value="Young" checked>Young</li>
+  			<li><input type="checkbox" name="age" value="Adult" checked >Adult</li>
+  			<li><input type="checkbox" name="age" value="Senior" checked>Senior</li>
+  			</ul>
+  		</li>
+		<li id='size'><a> Size: </a>
+			<ul>
+  			<li><input type="checkbox" name="size" value= "Small" checked>Small</li>
+  			<li><input type="checkbox" name="size" value="Medium" checked>Medium</li>
+  			<li><input type="checkbox" name="size" value="Large" checked >Large</li>
+  			<li><input type="checkbox" name="size" value="Giant" checked >Giant</li>
+  			</ul>
+  		</li>
+  			</form>
+  		</ul>
+
+  		
+
+
+  		<!--<div class="dropdown">
  			<button onclick="myFunction()" class="dropbtn">Dropdown</button>
   			<div id="myDropdown" class="dropdown-content">
   			</div>
 			</div>
   		<input type="submit" value="Submit">
   		</form>
-  	</div>
+  	</div>-->
 
-  	<h2>Available Dogs</h2>
+ 
 
 		<span id="main-image"></span>
 
