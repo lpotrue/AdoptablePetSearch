@@ -1,100 +1,178 @@
-
-
-#top {
-	background-image: url("https://image.ibb.co/kzqwn5/Full_Size_Render.jpg");
-	background-repeat: repeat;
-	box-sizing: border-box;
-	width: 100%;
-	height: 20%;
-	position: relative;
-	display: inline-block;
+main {
+  font: monospace;
+  background-color: #F5F5F5;
 }
 
-#container {
-	position: relative;
-	box-sizing: border-box;
-	float: left;
-	margin: auto;
-  	width: 70%;
-  	height: 50%;
-  	padding-top: 4%;
-  	padding-left: 4%;
-  	padding-bottom: 4%;
-  }
-
-
-
-#cover {
-	box-sizing: border-box;
-	width: 30%;
-	padding-left: 2%;
-	font-family: 'Architects Daughter', cursive;
-	padding-left: 70%;
-	padding-top: 2%;
-	font-size: 35px;
+h1 {
+  font-size: 25px;
+  padding-left: 10%;
 }
 
-#find{
-	color: #00E5EE;
+a:hover{
+  background-color: purple;
+}
+
+#menu {
+  box-sizing: border-box;
+  height: 8%;
+  width: 100%;
+  background: white;
+}
+
+.top {
+  background-image: url("https://image.ibb.co/gD9kx5/IMG_2941_JPG.jpg");
+  background-size: cover;
 }
 
 
-#map {
-		padding-left: 4%;
-		padding-top: 5%;
-        height: 500px;
-        width: 95%;
-       }
+#find {
+  color: white;
+  margin-left: 35%;
+}
+
+#submit {
+  margin-left: 35%;
+  align-content: right;
+  background-color: green;
+  color: white;
+  font-family: 'Kaushan Script', cursive;
+  border-radius: 6px;
+}
+
+#search-pets{
+  padding-left: 5%;
+  padding-top: 2%;
+  border-radius: 10px;
+}
+
+#js-to-map {
+  align-content: right;
+  color: grey;
+  background-color: #ADD8E6;
+  font-family: 'Kaushan Script', cursive;
+  border-radius: 6px;
+}
+
+#js-aspca {
+  margin-top: 2%;
+  margin-left: 5%;
+  color: grey;
+  background-color: #ADD8E6;
+  font-family: 'Kaushan Script', cursive;
+  border-radius: 6px;
+}
+
+#js-to-advanced{
+  align-content: right;
+  color: grey;
+  background-color: #ADD8E6;
+  font-family: 'Kaushan Script', cursive;
+  border-radius: 6px;
+}
+
+h2 {
+  font-size: 35px;
+  text-align: left;
+  padding-left: 5%;
+  padding-right: 20%;
+  font-family: 'Permanent Marker', cursive;
+  color: white;
+  padding-bottom: 80%;
+  display: inline-block;
+}
+
+#js-map {
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 425px;
+  width: 88%;
+  border: 4px solid black;
+}
+
+#map-border {
+  background-color: #708090;
+  padding-bottom: 5%;
+  margin-bottom: 2%;
+}
+ 
+#js-advanced-options {
+  display: inline-block;
+  box-sizing: border-box;
+  height: 25%;
+  width: 90%;
+  border: 4px solid black;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+h4 {
+  text-align: center;
+}
+#gender, #age, #size, #characteristics, #my-household{
+  float: left;
+}
+
+label {
+  display: block;
+  text-indent: -15px;
+  width:  30px;
+  margin-bottom: 4%;
+}
+
+ul, li {
+  text-decoration: none;
+  display: block;
+}
+
+#submit-2 {
+  align-content: left;
+  background-color: green;
+  color: white;
+  font-family: 'Kaushan Script', cursive;
+  border-radius: 6px;
+}
+
 
 h3 {
-	
+  font-family: 'Permanent Marker', cursive;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  margin-top: 0%
 }
 
- #search-pets {
- 	border-radius: 20px;
- 	overflow: hidden;
-	position: absolute;
-	left: auto;
-	right: 0;
-	top: 8px;
+.box {
+  display: inline-block;
+  box-sizing: border-box;
+  height: 30%;
+  width: 50%;
+  margin-left: 33%;
+  border: 2px solid black;
 }
 
-#gender {
-	float: left;
+.name {
+  text-decoration: underline;
+  background-color: #ADD8E6;
+  height: 12%;
+  width: 100%;
+  text-align: center;
 }
 
-#age{
-
-	text-align: center;
+#city, #state, #breed, #size, #age{
+  font-weight: normal;
+  text-align: center;
 }
 
-#size{
-	float: right;
-}
-ul {
-	margin: 0px;
-	padding: 0px;
-	list-style: none;
+h6 {
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
-ul {
-	float: left;
-	width: 100%;
-	height: 40px;
-	background-color: black;
-	opacity: .6;
-	line-height: 40px;
-	text-align: center;
+img {
+  display: block;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  padding-top: 2%;
 }
 
-ul li {
-	text-decoration: none;
-	color: white;
-	display: block;
-}
-
-media only screen and (max-width: 500px) {
-    body {
-        background-color: lightblue;
-    }
-}
