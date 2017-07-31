@@ -1,91 +1,115 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="main.css">
-	<link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
-	<link rel= "https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css">
-	<title></title>
+    <meta charset="UTF-8">
+    <title>First Capstone</title>
+    <meta name='description' content='API for petfinder.com and googlemaps to help connect people to adoptable dogs in the United States'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link rel="stylesheet" href="float.css">
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-	<section id="home">
-		<div id=top">
-			<form id ="search-pets" action="search-results.html">
-   			<Label id="find">Find Adoptable Dogs</Label>
-   			<input type="text" pattern="[0-9]{5}" placeholder= "Enter zip code" title="Five digit zip code">
-			<input type="submit" value="Submit">
-			</form>
-		</div>
-		
-		<img id="container" src="https://image.ibb.co/gD9kx5/IMG_2941_JPG.jpg">
-		<!--<img id="container" src="https://image.ibb.co/h6C7c5/boxer.jpg" alt="boxer" border="0">-->
-			 <h2>Connecting people to rescue organizatons and adoptable dogs in the United States.</h2>
-		
-       </section>
+    <main role="main">
+        
+        <div class="top">
+        <section id="menu">
+            <form id="search-pets" action="">
+                <input type="text" pattern="[0-9]{5}" placeholder="Enter zip code" title="Five digit zip code">
+                <input id="submit" type="submit" value="Submit">
+                </form>
+                <a href="#js-map"><button id="js-to-map">Click to use map</button>
+                </a>
+                <a href="#js-advanced-options">
+                <button id="js-to-advanced">Click for advanced search</button>
+                </a>
 
-    <section id="map">
-	<!--<h3>Find Available Rescue Dogs in the United States</h3>
-
-       </section>-->
-
-    </section>
-
-    <div id="advanced">
-	<h2>Advanced Search</h2>
-		<form action="">
-	 	<span>Gender:<br>
-  			<input type="radio" name="gender" value="male"> Male<br>
-  			<input type="radio" name="gender" value="female"> Female<br></span>
-  		<span>Age:<br>
-  			<input type="radio" name="age" value="Baby">Baby<br>
-  			<input type="radio" name="age" value="Young">Young<br>
-  			<input type="radio" name="age" value="Adult">Adult<br>
-  			<input type="radio" name="age" value="Senior">Senior<br></span>
-		<span>Size:<br>
-  			<input type="radio" name="size" value= "Small">Small<br>
-  			<input type="radio" name="size" value="Medium">Medium<br>
-  			<input type="radio" name="size" value="Large">Large<br>
-  			<input type="radio" name="size" value="Giant">Giant<br></span>
-
-  		<div class="dropdown">
- 			<button onclick="myFunction()" class="dropbtn">Dropdown</button>
-  			<div id="myDropdown" class="dropdown-content">
-  			</div>
-			</div>
-  		<input type="submit" value="Submit">
-  		</form>
-  	</div>
-
-  	<h2>Available Dogs</h2>
-
-		<span id="main-image"></span>
-
-			<div id="petfinderInfo">
-			<div class="pet-age"></div>
-			<div class="pet-gender"></div>
-			<div class="pet-breed"></div>
-			<div class="pet-location"></div>
-			<div class="pet-contact"></div>
-			<div class="pet-descrpition"></div>
-			<div class="js-search-results">
-		</div>
-	<script
-
-
+            <a href="https://secure.aspca.org/donate/ps-gn-p2?ms=MP_PMK_Googlebrand-T4&initialms=MP_PMK_Googlebrand-T4&pcode=WPSE9XXGOGN2PK00014&lpcode=WPSE9XXGOGN1PK00014&gclid=EAIaIQobChMIv6XK8Nyv1QIV1oKzCh17AwKbEAAYASAAEgKSKvD_BwE">
+                <button id="js-aspca">Click to Donate to the ASPCA</button>
+            </a>
+            </section>
+            <h2>Connecting people to adoptable dogs in the United States</h2>
+        </div>
+        <div id="map-border">
+            <h3>Click on the map to find adoptable dogs</h3>
+            <section id="js-map">
+            </section>
+        </div>
     
-<script src="map.js"></script>	
-<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3y6Bpz0bSh9WB45wBmaFEnlkogCoBklE&sensor=true"></script>-->
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3y6Bpz0bSh9WB45wBmaFEnlkogCoBklE&callback=initMap">
+        <section id="js-advanced-options">
+        <h4>Advanced Search Options</h4>
+            <strong><li id="gender">Gender</strong>
+            <ul>
+                <li>
+                    <label><input type="checkbox" value="male" checked> Male</label></li>
+                <li>
+                    <label><input type="checkbox" value="female" checked> Female</label></li>
+            </ul>
+            </li>
+            <strong><li id="age">Age</strong>
+            <ul>
+                <li>
+                    <label><input type="checkbox" value="baby" checked>Baby</label></li>
+                <li>
+                    <label><input type="checkbox" value="young" checked>Young</label></li>
+                <li>
+                    <label><input type="checkbox" value="adult" checked>Adult</label></li>
+                <li>
+                    <label><input type="checkbox" value="senior" checked>Senior</label></li>
+            </ul>
+            </li>
+            <strong><li id="size">Size</strong>
+            <ul>
+                <li>
+                    <label><input type="checkbox" value="small" checked>Small</label></li>
+                <li>
+                    <label><input type="checkbox" value="medium" checked>Medium</label></li>
+                <li>
+                    <label><input type="checkbox" value="large" checked>Large</label></li>
+                <li>
+                    <label><input type="checkbox" value="xl" checked>Extra Large</label></li>
+            </ul>
+            </li>
+            <strong><li id="characteristics">Characteristics</strong>
+            <ul>
+                <li>
+                    <label><input type="checkbox" value="Special Needs" checked>Special Needs</label></li>
+                <li>
+                    <label><input type="checkbox" value="House Trained" checked>House Trained</label></li>
+            </ul>
+            </li>
+            <strong><li id="my-household">My Household Has</strong>
+            <ul>
+                <li>
+                    <label><input type="checkbox" value="Cats" checked>Cats</label></li>
+                <li>
+                    <label><input type="checkbox" value="Dogs" checked>Dogs</label></li>
+                <li>
+                    <label><input type="checkbox" value="Young Children" checked>Young Children</label></li>
+            </ul>
+            </li>
+            <input id="submit-2" type="submit" value="Submit">
+            </form>
+        </div>
+        </section>
+
+        <div class="box">
+            <div id="petfinderInfo"></div>
+            <div class="js-search-results"></div>
+        </div>
+
+        <div class="profile"></div>
+    </main>
+
+    <script src="map.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3y6Bpz0bSh9WB45wBmaFEnlkogCoBklE&callback=initMap">
     </script>
-<script src="https://code.jquery.com/jquery-3.2.1.js"
-  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
 
-
-	<script src="script.js"></script>
-	
-	
-  </body>
 </html>
