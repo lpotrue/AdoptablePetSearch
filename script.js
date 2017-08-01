@@ -44,8 +44,8 @@ function makeApiCall(zipcode){
                         break
                     }
                 }
-                let zip = pet.contact.zip.$t;
-                zips.push(zip)
+                //let zip = pet.contact.zip.$t;
+                //zips.push(zip)
                 //let coverPhoto = pet.media.photos.photo[0].$t;
                 //html +=`<img src = "${pet.media.photos.photo[0].$t}"/>`
                 let breed = pet.breeds.breed.$t;

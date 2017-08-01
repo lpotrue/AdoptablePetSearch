@@ -6,16 +6,17 @@ function initMap() {
     scrollwheel: false,
     center: myLatlng
 
-}
-var map = new google.maps.Map(document.getElementById("map"), myOptions);
+  }
 
-var geocoder = new google.maps.Geocoder()
+  var map = new google.maps.Map(document.getElementById("map"), myOptions);
 
-google.maps.event.addListener(map, 'click', function(event) {
-  geocoder.geocode({
-    'latLng': event.latLng
-  }, function(results, status) {
-    if (status == google.maps.GeocoderStatus.OK) {
+  var geocoder = new google.maps.Geocoder()
+
+  google.maps.event.addListener(map, 'click', function(event) {
+    geocoder.geocode({
+      'latLng': event.latLng
+    }, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
       if (results[0]) {
         
         
@@ -37,9 +38,9 @@ google.maps.event.addListener(map, 'click', function(event) {
               marker.setMap(map);   
             }
           })
+        }
       }
-    }
+    });
   });
-});
 
 }

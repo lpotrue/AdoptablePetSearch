@@ -8,9 +8,6 @@ h1 {
   padding-left: 10%;
 }
 
-a:hover{
-  background-color: purple;
-}
 
 #menu {
   box-sizing: border-box;
@@ -46,15 +43,6 @@ a:hover{
 }
 
 #js-to-map {
-  align-content: right;
-  color: grey;
-  background-color: #ADD8E6;
-  font-family: 'Kaushan Script', cursive;
-  border-radius: 6px;
-}
-
-#js-aspca {
-  margin-top: 2%;
   margin-left: 5%;
   color: grey;
   background-color: #ADD8E6;
@@ -62,7 +50,16 @@ a:hover{
   border-radius: 6px;
 }
 
+#js-aspca {
+  margin-left: 40%;
+  color: grey;
+  background-color: #ADD8E6;
+  font-family: 'Kaushan Script', cursive;
+  border-radius: 6px;
+}
+
 #js-to-advanced{
+  margin-left: 5%;
   align-content: right;
   color: grey;
   background-color: #ADD8E6;
@@ -81,7 +78,7 @@ h2 {
   display: inline-block;
 }
 
-#js-map {
+#map {
   margin-left: 5%;
   margin-right: 5%;
   height: 425px;
@@ -96,13 +93,14 @@ h2 {
 }
  
 #js-advanced-options {
+  vertical-align: middle;
   display: inline-block;
   box-sizing: border-box;
   height: 25%;
   width: 90%;
-  border: 4px solid black;
   margin-left: 5%;
   margin-right: 5%;
+  background-color: grey;
 }
 
 h4 {
@@ -112,12 +110,12 @@ h4 {
   float: left;
 }
 
-label {
+/*label {
   display: block;
   text-indent: -15px;
   width:  30px;
   margin-bottom: 4%;
-}
+}*/
 
 ul, li {
   text-decoration: none;
@@ -125,7 +123,9 @@ ul, li {
 }
 
 #submit-2 {
-  align-content: left;
+  margin-bottom: 4%;
+  margin-left: 40%;
+  margin-top: 15%;
   background-color: green;
   color: white;
   font-family: 'Kaushan Script', cursive;
@@ -146,11 +146,12 @@ h3 {
   box-sizing: border-box;
   height: 30%;
   width: 50%;
-  margin-left: 33%;
-  border: 2px solid black;
+  margin-left: 25%;
+  border: 1px solid black;
 }
 
 .name {
+  margin-top: 3%;
   text-decoration: underline;
   background-color: #ADD8E6;
   height: 12%;
@@ -171,8 +172,15 @@ h6 {
 img {
   display: block;
   margin: auto;
-  height: 100%;
   width: 100%;
+  height: 70%;
+  padding-left: 4%;
+  padding-right: 4%;
   padding-top: 2%;
+  padding-bottom: 4%;
 }
 
+.profile {
+  box-sizing: border-box;
+
+}
