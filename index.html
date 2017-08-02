@@ -20,7 +20,8 @@
         <section id="menu">
             <form id="search-pets" action="">
                 <input type="text" pattern="[0-9]{5}" placeholder="Enter zip code" title="Five digit zip code">
-                <input id="submit" type="submit" value="Submit">
+                
+                <input id="submit" type="submit" value="Submit"></a>
                 </form>
                 <a href="#js-map"><button id="js-to-map">Click to use map</button>
                 </a>
@@ -36,7 +37,7 @@
         </div>
         <div id="map-border">
             <h3>Click on the map to find adoptable dogs</h3>
-            <section id="js-map">
+            <section id="map">
             </section>
         </div>
     
@@ -53,13 +54,17 @@
             <strong><li id="age">Age</strong>
             <ul>
                 <li>
-                    <label><input type="checkbox" value="baby" checked>Baby</label></li>
+                    <label><input type="checkbox" value="baby" checked>Baby</label>
+                    </li>
                 <li>
-                    <label><input type="checkbox" value="young" checked>Young</label></li>
+                    <label><input type="checkbox" value="young" checked>Young</label>
+                    </li>
                 <li>
-                    <label><input type="checkbox" value="adult" checked>Adult</label></li>
+                    <label><input type="checkbox" value="adult" checked>Adult</label>
+                    </li>
                 <li>
-                    <label><input type="checkbox" value="senior" checked>Senior</label></li>
+                    <label><input type="checkbox" value="senior" checked>Senior</label>
+                    </li>
             </ul>
             </li>
             <strong><li id="size">Size</strong>
@@ -70,8 +75,6 @@
                     <label><input type="checkbox" value="medium" checked>Medium</label></li>
                 <li>
                     <label><input type="checkbox" value="large" checked>Large</label></li>
-                <li>
-                    <label><input type="checkbox" value="xl" checked>Extra Large</label></li>
             </ul>
             </li>
             <strong><li id="characteristics">Characteristics</strong>
@@ -96,18 +99,20 @@
             </form>
         </div>
         </section>
-
+        <section id="results">
         <div class="box">
             <div id="petfinderInfo"></div>
             <div class="js-search-results"></div>
         </div>
+        </section>
 
         <div class="profile"></div>
+
     </main>
 
     <script src="map.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3y6Bpz0bSh9WB45wBmaFEnlkogCoBklE&callback=initMap">
-    </script>
+    </script> 
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
