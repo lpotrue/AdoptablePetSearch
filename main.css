@@ -1,190 +1,175 @@
 main {
   font: monospace;
-  background-color: #F5F5F5;
 }
 
-h1 {
-  font-size: 25px;
-  padding-left: 10%;
+h1, h2 {
+  color: white;
+  font-size: 35px;
+  padding-top: 2%;
+  text-align: left;
+  padding-left: 1%;
+  padding-right: 20%;
+  font-family: 'Julius Sans One', sans-serif;
+  padding-bottom: 80%;
+  display: block;
 }
 
-
-#menu {
-  box-sizing: border-box;
-  height: 8%;
-  width: 100%;
-  background: white;
+.transbox {
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.6;
+    filter: alpha(opacity=60); 
+    height: 100px;
+    width: 100%;
+    padding-left: 3%;
+    padding-top: 2%;
+    margin-bottom: 100%;
 }
 
-.top {
-  background-image: url("https://image.ibb.co/gD9kx5/IMG_2941_JPG.jpg");
+.transbox {
+    font-weight: bold;
+  }
+
+.background {
+  background-image: url("https://image.ibb.co/h6C7c5/boxer.jpg");
   background-size: cover;
 }
 
-
-#find {
-  color: white;
-  margin-left: 35%;
-}
-
 #submit {
-  margin-left: 35%;
   align-content: right;
   background-color: green;
   color: white;
-  font-family: 'Kaushan Script', cursive;
+  font: 13px Helvetica, Tahoma, serif;
   border-radius: 6px;
 }
 
-#search-pets{
-  padding-left: 5%;
-  padding-top: 2%;
-  border-radius: 10px;
+a {
+  text-decoration: none;
 }
-
-#js-to-map {
-  margin-left: 5%;
-  color: grey;
-  background-color: #ADD8E6;
-  font-family: 'Kaushan Script', cursive;
-  border-radius: 6px;
-}
-
-#js-aspca {
-  margin-left: 40%;
-  color: grey;
-  background-color: #ADD8E6;
-  font-family: 'Kaushan Script', cursive;
-  border-radius: 6px;
-}
-
-#js-to-advanced{
-  margin-left: 5%;
-  align-content: right;
-  color: grey;
-  background-color: #ADD8E6;
-  font-family: 'Kaushan Script', cursive;
-  border-radius: 6px;
-}
-
-h2 {
-  font-size: 35px;
-  text-align: left;
-  padding-left: 5%;
-  padding-right: 20%;
-  font-family: 'Permanent Marker', cursive;
-  color: white;
-  padding-bottom: 80%;
-  display: inline-block;
-}
-
- .petPhoto{
-
- }
  
 #map {
   margin-left: 5%;
   margin-right: 5%;
   height: 425px;
   width: 88%;
-  border: 4px solid black;
+  border: 4px solid orange;
 }
 
 #map-border {
-  background-color: #708090;
+  opacity: 0.6;
+  filter: alpha(opacity=60); 
+  padding-top: 5%;
   padding-bottom: 5%;
-  margin-bottom: 2%;
+  background-color: grey;
+  background: cover;
 }
  
-#js-advanced-options {
-  vertical-align: middle;
-  display: inline-block;
-  box-sizing: border-box;
-  height: 25%;
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
-  background-color: grey;
+#advanced-options {
+    float: right;
+    margin-right: 10%;
+    font-weight: bold;
+    background-color: white;
+    color: black;
+  }
+
+form {
+  background-color: white;
 }
 
-h4 {
-  text-align: center;
-}
-#gender, #age, #size, #characteristics, #my-household{
-  float: left;
+#finder{
+  margin-left: 10%;
+  font-weight: bold;
 }
 
-/*label {
-  display: block;
-  text-indent: -15px;
-  width:  30px;
-  margin-bottom: 4%;
-}*/
-
-ul, li {
-  text-decoration: none;
-  display: block;
+.nav {
+    display: block;
+    font: 13px Helvetica, Tahoma, serif;
+    text-transform: uppercase;
+    margin: 0; 
+    padding: 0;
 }
 
-#submit-2 {
-  margin-bottom: 4%;
-  margin-left: 40%;
-  margin-top: 15%;
-  background-color: green;
-  color: white;
-  font-family: 'Kaushan Script', cursive;
-  border-radius: 6px;
+.nav li {
+    display: inline-block;
+    list-style: none;
 }
 
+.nav .button-dropdown {
+    position: relative;
+}
+
+.nav li a {
+    display: block;
+    color: #333;
+    background-color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.nav li a span {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 20%;
+    color: #999;
+}
+
+.nav li a:hover, .nav li a.dropdown-toggle.active {
+    background-color: #289dcc;
+    color: #fff;
+}
+
+.nav li a:hover span, .nav li a.dropdown-toggle.active span {
+    color: #fff;
+}
+
+.nav li .dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    margin-top: 3px;
+    text-align: left;
+}
+
+.nav li .dropdown-menu.active {
+    display: block;
+}
+
+.nav li .dropdown-menu a {
+    width: 150px;
+}
 
 h3 {
-  font-family: 'Permanent Marker', cursive;
-  color: white;
-  text-align: center;
-  font-size: 25px;
-  margin-top: 0%
-}
-
-.box {
-  display: inline-block;
-  box-sizing: border-box;
-  height: 30%;
-  width: 50%;
-  margin-left: 25%;
-  border: 1px solid black;
-}
-
-.name {
   margin-top: 3%;
   text-decoration: underline;
-  background-color: #ADD8E6;
+  background-color: orange;
   height: 12%;
   width: 100%;
   text-align: center;
 }
 
-#city, #state, #breed, #size, #age{
-  font-weight: normal;
-  text-align: center;
-}
-
-h6 {
-  padding-left: 10%;
-  padding-right: 10%;
-}
-
-img {
-  display: block;
-  margin: auto;
-  width: 100%;
-  height: 70%;
-  padding-left: 4%;
-  padding-right: 4%;
-  padding-top: 2%;
-  padding-bottom: 4%;
-}
-
-.profile {
+.box {
   box-sizing: border-box;
+  border: 1px solid grey;
+  margin-bottom: 20px;
+}
+
+ 
+.box-image {
+  width: 100%;
+}
+
+#petfinderInfo, p, span {
+  box-sizing: border-box;
+  height: 20%;
+  display: block;
+  margin-left: 15%;
+  margin-right: 15%;
+  word-spacing: normal;
+}
+
+#detail {
+  display: hidden;
 
 }
