@@ -10,12 +10,15 @@
 
 
 var zips = []
+var addresses = []; 
+var shelters = []; 
     //makeApiCall(93427)
 
 //http://api.petfinder.com/pet.getRandom?format=json&key=a4d4d400939b10647da19b7593286b34&animal=dog&output=basic
 function makeApiCall(zipcode){
 //http://api.petfinder.com/shelter.get?id=SD08&format=json&key=a4d4d400939b10647da19b7593286b34&animal=smallfurry&output=basic
  //var zipcode = (zipcode);
+ //
     var url = `http://api.petfinder.com/pet.find?location=${zipcode}&key=a4d4d400939b10647da19b7593286b34&output=full&format=json`;
     return $.ajax({
         type : 'GET',
@@ -28,6 +31,10 @@ function makeApiCall(zipcode){
                // console.log(data.petfinder.pets.pet[i].description.$t)
            // }
            zips = []
+	   addresses = [];
+      	   shelters = [];
+
+
            let html = ""
            let pets = data.petfinder.pets.pet;
            pets.forEach(function(pet,e) { 
@@ -37,18 +44,32 @@ function makeApiCall(zipcode){
                 console.log(pet.contact.zip.$t)
                 if(zips.indexOf(pet.contact.zip.$t) < 0){
                     zips.push(pet.contact.zip.$t)
+		   
                 }
+
+	   	var address = pet.contact.address1.$t + ' ' + pet.contact.city.$t + ' ' + pet.contact.state.$t + ' ' + pet.contact.zip.$t; 
+                if(addresses.indexOf(address) < 0){
+		    addresses.push(address)
+		}
+
+
+	
+		if(shelters.indexOf(pet.shelterId.$t) < 0) {
+			shelters.push(pet.shelterId.$t)
+		}
                 
 
                 
                 let name = pet.name.$t;
                 html += '<div class="name">'+name+'</div>'
-                for(var k = 0; k<pet.media.photos.photo.length; k++){
-                    if(pet.media.photos.photo[k]['@size'] == "x") {
-                        html +=`<img class="petPhoto" src = "${pet.media.photos.photo[k].$t}"/>`
-                        break
-                    }
-                }
+		if(pet.media.photos){
+			for(var k = 0; k<pet.media.photos.photo.length; k++){
+			    if(pet.media.photos.photo[k]['@size'] == "x") {
+				html +=`<img class="petPhoto" src = "${pet.media.photos.photo[k].$t}"/>`
+				break
+			    }
+			}
+		}
                 //let zip = pet.contact.zip.$t;
                 //zips.push(zip)
                 //let coverPhoto = pet.media.photos.photo[0].$t;
@@ -93,6 +114,8 @@ function makeApiCall(zipcode){
                 //objective is to show all images for each pet. This will require an additional for each loop within the current for each loop.
             } )
            console.log(zips)
+	   console.log(addresses)
+	   console.log(shelters)
            //for(var k = 0; k<pet.media.photos.photo.length; k++){
                 //if(pet.media.photos.photo[k]['@size'] == "x") {
                 //html +=`<img src = "${pet.media.photos.photo[k].$t}"/>`
