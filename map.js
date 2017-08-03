@@ -18,19 +18,19 @@ function initMap() {
       'latLng': event.latLng
     }, function(results, status) {
       console.log(results)
-	    
+
       if (status == google.maps.GeocoderStatus.OK) {
         if (results[0]) {
 
-		
-        setMapOnAll(null);
-	markers = []; 
+
+          setMapOnAll(null);
+          markers = []; 
           results[0].address_components.forEach((result, i)=>{ 
             if (result.types[0]== "postal_code") {
 
               let zipcode = Number(result.long_name)
-              console.log(zips)
-              console.log(addresses)
+             
+              
               $.when(makeApiCall(zipcode)).then(function(){
 
                 var lat = results[0].geometry.location.lat();
@@ -39,22 +39,22 @@ function initMap() {
                 var marker = new google.maps.Marker({
                   position: newLatLng,
                   title:"You!",
-		  icon: 'markers/paleblue_markerA.png'
-		    
+                  icon: 'markers/paleblue_markerA.png'
+
                 });
-		markers.push(marker) 
+                markers.push(marker) 
                // To add the marker to the map, call setMap();
                marker.setMap(map);  
-	       bounds.extend(marker.getPosition());
-		map.fitBounds(bounds);
-	
+               bounds.extend(marker.getPosition());
+               map.fitBounds(bounds);
+
 	       //addMore(addresses,map); 
 	       for(var s=0; s<shelters.length; s++){
-		       makeMoreCalls(shelters[s])
-	       }
-	       
+          makeMoreCalls(shelters[s])
+          }
 
-            })
+
+     })
               
 
             }
@@ -68,48 +68,48 @@ function initMap() {
   function makeMoreCalls(shelterId){  
     var url = `http://api.petfinder.com/shelter.get?id=${shelterId}&key=a4d4d400939b10647da19b7593286b34&output=full&format=json`;
     return $.ajax({
-        type : 'GET',
-        data : {},
-        url : url+'&callback=?' ,
-        dataType: 'json',
-        success : function(data) {       
-		console.log(data.petfinder.shelter)
-          	let lat = data.petfinder.shelter.latitude.$t;
-    		let lng = data.petfinder.shelter.longitude.$t;
-	        var newLatLng = new google.maps.LatLng(lat , lng);
-                var marker = new google.maps.Marker({
-                  position: newLatLng,
-                  title:data.petfinder.shelter.name.$t
-		    
-                });
-		markers.push(marker) 		
-                marker.setMap(map);  
-		bounds.extend(marker.getPosition());
-		map.fitBounds(bounds);
-			    		
-	}
-    
+      type : 'GET',
+      data : {},
+      url : url+'&callback=?' ,
+      dataType: 'json',
+      success : function(data) {       
+        console.log(data.petfinder.shelter)
+        let lat = data.petfinder.shelter.latitude.$t;
+        let lng = data.petfinder.shelter.longitude.$t;
+        var newLatLng = new google.maps.LatLng(lat , lng);
+        var marker = new google.maps.Marker({
+          position: newLatLng,
+          title:data.petfinder.shelter.name.$t
+
+        });
+        markers.push(marker) 		
+        marker.setMap(map);  
+        bounds.extend(marker.getPosition());
+        map.fitBounds(bounds);
+
+      }
+
     })
   }
 
   
   function addMore(addresses, map){
     for( i = 0; i < addresses.length; i++ ) {
-	var address = addresses[i]
-    geocoder.geocode( { 'address': address}, function(results, status) {
+     var address = addresses[i]
+     geocoder.geocode( { 'address': address}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         map.setCenter(results[0].geometry.location);
         var marker = new google.maps.Marker({
-            map: map,
-            position: results[0].geometry.location
+          map: map,
+          position: results[0].geometry.location
         });
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
       }
     })		
-  
-    }  
-  }
+
+   }  
+ }
 
 
       // Sets the map on all markers in the array.
@@ -212,5 +212,7 @@ function initMap() {
     });
   });
 
-*/
+  */
 }
+
+

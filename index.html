@@ -7,112 +7,216 @@
     <meta name='description' content='API for petfinder.com and googlemaps to help connect people to adoptable dogs in the United States'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
     <link rel="stylesheet" href="float.css">
     <link rel="stylesheet" href="main.css">
+     <link rel="stylesheet" href="starwars.css">
 </head>
 
 <body>
     <main role="main">
-        
-        <div class="top">
-        <section id="menu">
-            <form id="search-pets" action="">
-                <input type="text" pattern="[0-9]{5}" placeholder="Enter zip code" title="Five digit zip code">
-                
-                <input id="submit" type="submit" value="Submit"></a>
-                </form>
-                <a href="#js-map"><button id="js-to-map">Click to use map</button>
-                </a>
-                <a href="#js-advanced-options">
-                <button id="js-to-advanced">Click for advanced search</button>
-                </a>
+        <div class="background">
+            <div class="row">
+                <div class="col-12">
 
-            <a href="https://secure.aspca.org/donate/ps-gn-p2?ms=MP_PMK_Googlebrand-T4&initialms=MP_PMK_Googlebrand-T4&pcode=WPSE9XXGOGN2PK00014&lpcode=WPSE9XXGOGN1PK00014&gclid=EAIaIQobChMIv6XK8Nyv1QIV1oKzCh17AwKbEAAYASAAEgKSKvD_BwE">
-                <button id="js-aspca">Click to Donate to the ASPCA</button>
-            </a>
-            </section>
-            <h2>Connecting people to adoptable dogs in the United States</h2>
+                    <div class="transbox">
+                        <div id="advanced-options">
+                            <ul class="nav">
+                                <li class="button-dropdown">
+                                    <a href="javascript:void(0)" class="dropdown-toggle">Advanced Search Options <div>▼</div></a>
+                                    <ul class="dropdown-menu">
+                                        <form>
+                                            <li>
+                                                <strong><li>Gender</strong>
+                                                <ul>
+                                                    <li>
+                                                        <input type="checkbox" value="male" checked> Male</li>
+                                                    </br>
+                                                    <li>
+                                                        <input type="checkbox" value="female" checked> Female</li>
+                                                    </br>
+                                                </ul>
+                                            </li>
+                                            </br><strong><li>Age</strong>
+                                            </br>
+                                            <ul>
+                                                <li>
+                                                    <input type="checkbox" value="baby" checked>Baby</li>
+                                                </br>
+                                                <li>
+                                                    <input type="checkbox" value="young" checked>Young</li>
+                                                </br>
+                                                <li>
+                                                    <input type="checkbox" value="adult" checked>Adult</li>
+                                                </br>
+                                                <li>
+                                                    <input type="checkbox" value="senior" checked>Senior</li>
+                                                </br>
+                                            </ul>
+                                </li>
+                                </br><strong><li>Size</strong>
+                                </br>
+                                <ul>
+                                    <li>
+                                        <input type="checkbox" value="small" checked>Small</li>
+                                    </br>
+                                    <li>
+                                        <input type="checkbox" value="medium" checked>Medium</li>
+                                    </br>
+                                    <li>
+                                        <input type="checkbox" value="large" checked>Large</li>
+                                    </br>
+                                </ul>
+                                </li>
+                                </br><strong><li>Characteristics</strong>
+                                </br>
+                                <ul>
+                                    <li>
+                                        <input type="checkbox" value="Special Needs" checked>Special Needs</li>
+                                    </br>
+                                    <li>
+                                        <input type="checkbox" value="House Trained" checked>House Trained</li>
+                                    </br>
+                                </ul>
+                                </li>
+                                </br><strong><li>My Household Has</strong>
+                                </br>
+                                <ul>
+                                    <li>
+                                        <input type="checkbox" value="Cats" checked>Cats</li>
+                                    </br>
+                                    <li>
+                                        <input type="checkbox" value="Dogs" checked>Dogs</li>
+                                    </br>
+                                    <li>
+                                        <input type="checkbox" value="Young Children" checked>Kids</li>
+                                    </br>
+                                </ul>
+                                </li>
+                                </li>
+                                </li>
+                                <ul>
+                                    <li>
+                                        <form>
+                                        <input type="text" pattern="[0-9]{5}" placeholder="Enter zip code" title="Five digit zip code">
+                                        <input id="submit" type="submit" value="Submit">
+                                       </form>
+                                        <ul>
+                                            <li>
+                                               
+                        </div>
+                        <div id="finder">
+                            <ul class="nav">
+
+                                <li class="button-dropdown">
+                                    <a href="javascript:void(0)" class="dropdown-toggle">
+                                 Menu <div>▼</div></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="#map">
+                                Map</a>
+                                        </li>
+                                        <li>
+            <a href="https://secure.aspca.org/donate/ps-gn-p2?ms=MP_PMK_Googlebrand-T4&initialms=MP_PMK_Googlebrand-T4&pcode=WPSE9XXGOGN2PK00014&lpcode=WPSE9XXGOGN1PK00014&gclid=EAIaIQobChMIv6XK8Nyv1QIV1oKzCh17AwKbEAAYASAAEgKSKvD_BwE">Donate</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            </li>
+                            </ul>
+                        </div>
+                        <strong><h2>Connecting people to adoptable dogs in the United States</h2></strong>
+                    </div>
+                </div>
+            </div>
         </div>
+        </section>
         <div id="map-border">
-            <h3>Click on the map to find adoptable dogs</h3>
-            <section id="map">
-            </section>
+        <section id="map">
+        
+        <h4>Click on the map to find adoptable dogs</h4>
+        <div class="row">
+        <div class="col-12">
+                    
         </div>
-    
-        <section id="js-advanced-options">
-        <h4>Advanced Search Options</h4>
-            <strong><li id="gender">Gender</strong>
-            <ul>
-                <li>
-                    <label><input type="checkbox" value="male" checked> Male</label></li>
-                <li>
-                    <label><input type="checkbox" value="female" checked> Female</label></li>
-            </ul>
-            </li>
-            <strong><li id="age">Age</strong>
-            <ul>
-                <li>
-                    <label><input type="checkbox" value="baby" checked>Baby</label>
-                    </li>
-                <li>
-                    <label><input type="checkbox" value="young" checked>Young</label>
-                    </li>
-                <li>
-                    <label><input type="checkbox" value="adult" checked>Adult</label>
-                    </li>
-                <li>
-                    <label><input type="checkbox" value="senior" checked>Senior</label>
-                    </li>
-            </ul>
-            </li>
-            <strong><li id="size">Size</strong>
-            <ul>
-                <li>
-                    <label><input type="checkbox" value="small" checked>Small</label></li>
-                <li>
-                    <label><input type="checkbox" value="medium" checked>Medium</label></li>
-                <li>
-                    <label><input type="checkbox" value="large" checked>Large</label></li>
-            </ul>
-            </li>
-            <strong><li id="characteristics">Characteristics</strong>
-            <ul>
-                <li>
-                    <label><input type="checkbox" value="Special Needs" checked>Special Needs</label></li>
-                <li>
-                    <label><input type="checkbox" value="House Trained" checked>House Trained</label></li>
-            </ul>
-            </li>
-            <strong><li id="my-household">My Household Has</strong>
-            <ul>
-                <li>
-                    <label><input type="checkbox" value="Cats" checked>Cats</label></li>
-                <li>
-                    <label><input type="checkbox" value="Dogs" checked>Dogs</label></li>
-                <li>
-                    <label><input type="checkbox" value="Young Children" checked>Young Children</label></li>
-            </ul>
-            </li>
-            <input id="submit-2" type="submit" value="Submit">
-            </form>
+        </div>
         </div>
         </section>
         <section id="results">
-        <div class="box">
-            <div id="petfinderInfo"></div>
-            <div class="js-search-results"></div>
-        </div>
+
+            <!--<div class="col-3">
+                <div class="box">
+                    <div class="box-image"></div>
+                    <div id="petfinderInfo"></div>
+                    <div class="js-search-results"></div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="box">
+                    <div class="box-image"></div>
+                    <div id="petfinderInfo"></div>
+                    <div class="js-search-results"></div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="box">
+                    <div class="box-image"></div>
+                    <div id="petfinderInfo"></div>
+                    <div class="js-search-results"></div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="box">
+                    <div class="box-image"></div>
+                    <div id="petfinderInfo"></div>
+                    <div class="js-search-results"></div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="box">
+                    <div class="box-image"></div>
+                    <div id="petfinderInfo"></div>
+                    <div class="js-search-results"></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="box">
+                    <div class="box-image"></div>
+                    <div id="petfinderInfo"></div>
+                    <div class="js-search-results"></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="box">
+                    <div class="box-image"></div>
+                    <div id="petfinderInfo"></div>
+                    <div class="js-search-results"></div>
+                </div>
+            </div>
         </section>
 
-        <div class="profile"></div>
+        <!--<div id="finder">
+                <ul class="nav">
+                <li class="button-dropdown">
+                <a href="javascript:void(0)" class="dropdown-toggle">
+                Read more about me! <div>▼</div></a>
+                <ul class="dropdown-menu">
+                    <li>
+                    <a href="#description"></a>
+                    </li>
+                    </li>
+                </ul>
+                </div>-->
 
     </main>
 
     <script src="map.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3y6Bpz0bSh9WB45wBmaFEnlkogCoBklE&callback=initMap">
-    </script> 
+    </script>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
