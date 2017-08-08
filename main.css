@@ -14,7 +14,18 @@ h1, h2 {
   display: block;
 }
 
+#to-top {
+  position: fixed;
+  background-color: #ffffff;
+  opacity: 0.6;
+  filter: alpha(opacity=60); 
+  font-weight: bold;
+  background-color: white;
+  color: black;
+}
+
 .transbox {
+    margin-top: 0px;
     background-color: #ffffff;
     border: 1px solid black;
     opacity: 0.6;
@@ -26,11 +37,11 @@ h1, h2 {
     margin-bottom: 100%;
 }
 
-.transbox {
+.transbox, #to-top {
     font-weight: bold;
   }
 
-.background {
+#background {
   background-image: url("https://image.ibb.co/h6C7c5/boxer.jpg");
   background-size: cover;
 }
@@ -149,6 +160,7 @@ h3 {
   text-align: center;
 }
 
+
 /*.card {
   box-sizing: border-box;
   border: 1px solid grey;
@@ -160,13 +172,14 @@ h3 {
   width: 100%;
 }*/
 
-#petfinderInfo, p, span {
+#petfinderInfo, #dog-template, p, span {
   box-sizing: border-box;
   height: 20%;
   display: block;
   margin-left: 15%;
   margin-right: 15%;
   word-spacing: normal;
+  text-align: center;
 }
 
 #detail {

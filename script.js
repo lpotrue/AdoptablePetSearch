@@ -2,9 +2,11 @@
 
     $('form').on('submit', function(e){
         e.preventDefault(); 
-        console.log("The zip code is: " + $('input').val())
-        makeApiCall($('input').val())
+        console.log("The zip code is: " + $('#zipcode-input').val())
+        makeApiCall($('#zipcode-input').val())
     })
+
+
 });
 
 
@@ -42,22 +44,22 @@ return $.ajax({
           if(shelters.indexOf(pet.shelterId.$t) < 0) {
              shelters.push(pet.shelterId.$t)
          }
-         /*
+         
 
 
-         let name = pet.name.$t;
+         //let name = pet.name.$t;
 
-         html += '<div class="name">'+name+'</div>'
+         //html += '<div class="name">'+name+'</div>'
          if(pet.media.photos){
              for(var k = 0; k<pet.media.photos.photo.length; k++){
-                 if(pet.media.photos.photo[k]['@size'] == "x") {
-                    html +=`<img class="petPhoto" src = "${pet.media.photos.photo[k].$t}"/>`
-                    break
-                }
+                 if(pet.media.photos.photo[0]['@size'] == "x") {
+                    html +=`<img class="card-image" src = "${pet.media.photos.photo[k].$t}"/>`
+                   
+               }
             }
         }
 
-
+        /*
         let breed = pet.breeds.breed.$t;
         if (pet.mix.$t == "yes") {
             html += `<p>I am an amazing mixed breed.</p>`
@@ -95,22 +97,34 @@ return $.ajax({
 
         }
 
+          var DOG_COVER_TEMPLATE = '#dog-template';
             html +=   
-     `<div class="col-4">
-      <div class="card">
-        <img class="card-image" src="https://tf-assets-prod.s3.amazonaws.com/tf-curric/WEB-DEV-001/2.6.3_challenge_responsive_layout/finn_square.png" />
-        <div class="card-content">
-          <h3>Finn</h3>
-          <p>Storm Trooper, befriends Ray</p>
+          `<div class="col-4">
+          <div class="card">
+          <div class="card-content">
+          <img class="card-image" src="${pet.media.photos.photo[0].$t}"/>
+          
+          <h3><a onclick="displayProfile(${pet.id.$t})">${pet.name.$t}</a></h3>
+          <p>I am a ${pet.breeds.breed.$t}.</p>
+          <p>${pet.age.$t}</p>
+          <span>I live in ${pet.contact.city.$t},<span><span>${pet.contact.state.$t}</span>
         </div>
-      </div>
-      </div>`
+        </div>
+        </div>`
+        console.log(pet)
 
+        //var DOG_PROFILE = '#dog-profile';
+         //html += 
+        // `<p>I am a ${pet.breeds.breed.$t}</p>
+        // <p>${pet.age.$t}</p>
+        // <span>And I live in ${pet.contact.city.$t},</span> 
+        // <span>${pet.contact.state.$t}</span>
+        // <div id ="js-description">${pet.description.$t}<div>` 
 
                 
-                
+        })
 
-            } )
+
 
      html = "<div>" + html + "</div>"
 
@@ -152,5 +166,6 @@ jQuery(document).ready(function (e) {
         if (!n.parents().hasClass("button-dropdown")) e(".button-dropdown .dropdown-toggle").removeClass("active");
     })
 });
+
 
 

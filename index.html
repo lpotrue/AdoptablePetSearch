@@ -15,9 +15,20 @@
 
 <body>
     <main role="main">
-        <div class="background">
+    <section id="top">
+    </section>
+        <div id="background">
             <div class="row">
                 <div class="col-12">
+
+                    <div id="to-top">
+                            <ul class="nav">
+
+                                <li class="button-dropdown">
+                                    <a href="javascript:void(0)" class="dropdown-toggle">
+                                            <a href="#top">Up</a>
+                                        </li>
+                                    </ul></div>
 
                     <div class="transbox">
                         <div id="advanced-options">
@@ -98,7 +109,7 @@
                                 <ul>
                                     <li>
                                         <form>
-                                        <input type="text" pattern="[0-9]{5}" placeholder="Enter zip code" title="Five digit zip code">
+                                        <input id="zipcode-input" type="text" pattern="[0-9]{5}" placeholder="Enter zip code" title="Five digit zip code">
                                         <input id="submit" type="submit" value="Submit">
                                        </form>
                                         <ul>
@@ -132,6 +143,7 @@
         </div>
         </section>
         <div id="map-border">
+        <button id="myBtn">Redirect</button>
         <section id="map">
         
         <h4>Click on the map to find adoptable dogs</h4>
@@ -143,62 +155,17 @@
         </div>
         </section>
         <section id="results">
-
-            <!--<div class="col-3">
-                <div class="box">
-                    <div class="box-image"></div>
-                    <div id="petfinderInfo"></div>
-                    <div class="js-search-results"></div>
-                </div>
-            </div>
-
-            <div class="col-4">
-                <div class="box">
-                    <div class="box-image"></div>
-                    <div id="petfinderInfo"></div>
-                    <div class="js-search-results"></div>
-                </div>
-            </div>
-
-            <div class="col-4">
-                <div class="box">
-                    <div class="box-image"></div>
-                    <div id="petfinderInfo"></div>
-                    <div class="js-search-results"></div>
-                </div>
-            </div>
-
-            <div class="col-4">
-                <div class="box">
-                    <div class="box-image"></div>
-                    <div id="petfinderInfo"></div>
-                    <div class="js-search-results"></div>
-                </div>
-            </div>
-
-            <div class="col-4">
-                <div class="box">
-                    <div class="box-image"></div>
-                    <div id="petfinderInfo"></div>
-                    <div class="js-search-results"></div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="box">
-                    <div class="box-image"></div>
-                    <div id="petfinderInfo"></div>
-                    <div class="js-search-results"></div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="box">
-                    <div class="box-image"></div>
-                    <div id="petfinderInfo"></div>
-                    <div class="js-search-results"></div>
-                </div>
-            </div>
+            <div id="dog-info-template">
+            <div class="hidden">
+            <div id="dog-prof">
+            <li class="name">
+                <div class=""></div>
+                <div class="shopping-item-controls"></div>
+            </li>
+        </div>
+    </div>
         </section>
-
+                
         <!--<div id="finder">
                 <ul class="nav">
                 <li class="button-dropdown">
