@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang ="en">
 
 <head>
-    <meta charset="UTF-8">
     <title>First Capstone</title>
+    <meta charset="UTF-8">
     <meta name='description' content='API for petfinder.com and googlemaps to help connect people to adoptable dogs in the United States'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
     <link rel="stylesheet" href="float.css">
     <link rel="stylesheet" href="main.css">
      <link rel="stylesheet" href="starwars.css">
@@ -21,17 +23,8 @@
             <div class="row">
                 <div class="col-12">
 
-                    <div id="to-top">
-                            <ul class="nav">
-
-                                <li class="button-dropdown">
-                                    <a href="javascript:void(0)" class="dropdown-toggle">
-                                            <a href="#top">Up</a>
-                                        </li>
-                                    </ul></div>
-
                     <div class="transbox">
-                        <div id="advanced-options">
+                        <div id="js-advanced-options">
                             <ul class="nav">
                                 <li class="button-dropdown">
                                     <a href="javascript:void(0)" class="dropdown-toggle">Advanced Search Options <div>▼</div></a>
@@ -41,10 +34,10 @@
                                                 <strong><li>Gender</strong>
                                                 <ul>
                                                     <li>
-                                                        <input type="checkbox" value="male" checked> Male</li>
+                                                        <input type="radio" value="male"  name="sex"> Male</li>
                                                     </br>
                                                     <li>
-                                                        <input type="checkbox" value="female" checked> Female</li>
+                                                        <input type="radio" value="female"  name="sex"> Female</li>
                                                     </br>
                                                 </ul>
                                             </li>
@@ -52,16 +45,16 @@
                                             </br>
                                             <ul>
                                                 <li>
-                                                    <input type="checkbox" value="baby" checked>Baby</li>
+                                                    <input type="radio" value="baby"  name="age">Baby</li>
                                                 </br>
                                                 <li>
-                                                    <input type="checkbox" value="young" checked>Young</li>
+                                                    <input type="radio" value="young"  name="age">Young</li>
                                                 </br>
                                                 <li>
-                                                    <input type="checkbox" value="adult" checked>Adult</li>
+                                                    <input type="radio" value="adult"  name="age">Adult</li>
                                                 </br>
                                                 <li>
-                                                    <input type="checkbox" value="senior" checked>Senior</li>
+                                                    <input type="radio" value="senior"  name="age">Senior</li>
                                                 </br>
                                             </ul>
                                 </li>
@@ -69,38 +62,39 @@
                                 </br>
                                 <ul>
                                     <li>
-                                        <input type="checkbox" value="small" checked>Small</li>
+                                        <input type="radio" value="small"  name="size">Small</li>
                                     </br>
                                     <li>
-                                        <input type="checkbox" value="medium" checked>Medium</li>
+                                        <input type="radio" value="medium"  name="size">Medium</li>
                                     </br>
                                     <li>
-                                        <input type="checkbox" value="large" checked>Large</li>
-                                    </br>
-                                </ul>
-                                </li>
-                                </br><strong><li>Characteristics</strong>
-                                </br>
-                                <ul>
-                                    <li>
-                                        <input type="checkbox" value="Special Needs" checked>Special Needs</li>
-                                    </br>
-                                    <li>
-                                        <input type="checkbox" value="House Trained" checked>House Trained</li>
+                                        <input type="radio" value="large"  name="size">Large</li>
                                     </br>
                                 </ul>
                                 </li>
-                                </br><strong><li>My Household Has</strong>
+                                </br><strong><li>Animal Type</strong>
                                 </br>
                                 <ul>
                                     <li>
-                                        <input type="checkbox" value="Cats" checked>Cats</li>
+                                        <input type="radio" value="barnyard"  name="animal">Barnyard</li>
                                     </br>
                                     <li>
-                                        <input type="checkbox" value="Dogs" checked>Dogs</li>
+                                        <input type="radio" value="dog"  name="animal">Dog</li>
                                     </br>
                                     <li>
-                                        <input type="checkbox" value="Young Children" checked>Kids</li>
+                                        <input type="radio" value="cat"  name="animal">Cat</li>
+                                    </br>
+                                     <li>
+                                        <input type="radio" value="bird"  name="animal">Bird</li>
+                                    </br>
+                                     <li>
+                                        <input type="radio" value="reptile"  name="animal">Reptile</li>
+                                    </br>
+                                     <li>
+                                        <input type="radio" value="horse"  name="animal">Horse</li>
+                                    </br>
+                                     <li>
+                                        <input type="radio" value="smallfurry"  name="animal">Small Furry</li>
                                     </br>
                                 </ul>
                                 </li>
@@ -141,12 +135,18 @@
                 </div>
             </div>
         </div>
-        </section>
+       </div>
         <div id="map-border">
-        <button id="myBtn">Redirect</button>
+        <h4>Click on the map to find adoptable dogs, and locate nearby shelters.</h4>
+        <div id="to-top">
+                <ul class="nav">
+                    <li class="button-dropdown">
+                        <a href="javascript:void(0)" class="dropdown-toggle">
+                            <a href="#top">Back to Top</a>
+                                </li>
+                                    </ul></div>
+         
         <section id="map">
-        
-        <h4>Click on the map to find adoptable dogs</h4>
         <div class="row">
         <div class="col-12">
                     
@@ -154,31 +154,14 @@
         </div>
         </div>
         </section>
-        <section id="results">
-            <div id="dog-info-template">
-            <div class="hidden">
-            <div id="dog-prof">
-            <li class="name">
-                <div class=""></div>
-                <div class="shopping-item-controls"></div>
-            </li>
-        </div>
-    </div>
-        </section>
-                
-        <!--<div id="finder">
-                <ul class="nav">
-                <li class="button-dropdown">
-                <a href="javascript:void(0)" class="dropdown-toggle">
-                Read more about me! <div>▼</div></a>
-                <ul class="dropdown-menu">
-                    <li>
-                    <a href="#description"></a>
-                    </li>
-                    </li>
-                </ul>
-                </div>-->
 
+        <section id="results">
+            <div id="dog-info-template"></div>
+        </section>
+            
+            <section id="dog-profile">
+            </section>
+        
     </main>
 
     <script src="map.js"></script>
