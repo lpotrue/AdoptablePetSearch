@@ -1,4 +1,5 @@
 
+var searchObj = {"location": 97219}
 function initMap() {
   var myLatlng = new google.maps.LatLng(40.2010 , -98.9836);
   var myOptions = {
@@ -28,10 +29,11 @@ function initMap() {
           results[0].address_components.forEach((result, i)=>{ 
             if (result.types[0]== "postal_code") {
 
-              let zipcode = Number(result.long_name)
-             
+             let zipcode = Number(result.long_name)
+             searchObj["location"]=zipcode
+            console.log(searchObj)        
               
-              $.when(makeApiCall(zipcode)).then(function(){
+              $.when(makeApiCall(searchObj)).then(function(){
 
                 var lat = results[0].geometry.location.lat();
                 var lng = results[0].geometry.location.lng();

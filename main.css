@@ -236,6 +236,7 @@ h3 {
 .card {
   border: 1px solid #E5E5E5;
   margin-bottom: 20px;
+  height: 500px;
 }
 
 .card-image {

@@ -18,22 +18,37 @@
 //http://api.petfinder.com/pet.find?location=97062&key=a4d4d400939b10647da19b7593286b34&output=full&format=json
 //http://api.petfinder.com/pet.getRandom?format=json&key=a4d4d400939b10647da19b7593286b34&animal=dog&output=basic
 
-function makeApiCall(zipcode, sex, age, size){
+function makeApiCall(searchObj){
 //http://api.petfinder.com/shelter.get?id=SD08&format=json&key=a4d4d400939b10647da19b7593286b34&animal=smallfurry&output=basic
 
-var url = `http://api.petfinder.com/pet.find?location=${zipcode}&key=a4d4d400939b10647da19b7593286b34&output=full&format=json`;
+
+var str = jQuery.param( searchObj );
+console.log(str);
+
+ var url = `http://api.petfinder.com/pet.find?${str}&key=a4d4d400939b10647da19b7593286b34&output=full&format=json`;
+
+
+ console.log(url)
+ 
+
+
+
+ //var url = `http://api.petfinder.com/pet.find?location=${zipcode}&key=a4d4d400939b10647da19b7593286b34&output=full&format=json`;
 return $.ajax({
   type : 'GET',
   data : {},
   url : url+'&callback=?' ,
   dataType: 'json',
   success : function(data) {              
-
+    if(!data.petfinder.pets){
+      return "no pets"
+    }
 
     shelters = [];
 
 
     let html = ""
+
     let pets = data.petfinder.pets.pet;
     pets.forEach(function(pet,e) { 
 
@@ -77,7 +92,7 @@ return $.ajax({
 
 
 
-          console.log(pet)
+          //console.log(pet)
 
 
         })
@@ -103,17 +118,20 @@ return $.ajax({
 
 
 function findImage(pet){
-   for(var c = 0; c< pet.media.photos.photo.length; c++){
-          if(pet.media.photos.photo[c]['@size'] == "x") {
-            return `<img class="card-image" src = "${pet.media.photos.photo[c].$t}"/>`
-          }
-        }
+  if(!pet.media.photos){
+    return "no pet photos"
+  }
+ for(var c = 0; c< pet.media.photos.photo.length; c++){
+  if(pet.media.photos.photo[c]['@size'] == "x") {
+    return `<img class="card-image" src = "${pet.media.photos.photo[c].$t}"/>`
+  }
+}
 }
 
 function showPetProfile(id) {
-    
-        
-    
+
+
+
 
 
 //function showPetProfile(id)
@@ -179,16 +197,19 @@ jQuery(document).ready(function (e) {
 
 //    makeApiCall($('#zipcode-input').val())
 $('input[type=radio]').change(
-    function(){ 
-var obj = {}
-            $('input[type=radio]:checked' ).each(function () {
-                
-                obj[this.name] = this.value
-            })
-             console.log(obj)
-            makeApiCall($('zipcode-input').val())
-    }
-)
+  function(){ 
+    
+    $('input[type=radio]:checked' ).each(function () {
 
-   
+      searchObj[this.name] = this.value
+    })
+    
+      
+    makeApiCall(searchObj)
+    console.log(searchObj)
+    
+  }
+  )
+
+
 
