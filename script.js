@@ -44,6 +44,7 @@ return $.ajax({
       return "no pets"
     }
 
+
     shelters = [];
 
 
@@ -72,27 +73,23 @@ return $.ajax({
           }
 
 
-
           html +=   
           `<div class="col-4">
-          <div class="card">
-          <div class="card-content">`
+          <div class="card"<a onclick="showPetProfile(${pet.id.$t})"></a>`
           
           html += findImage(pet)
+          html += findBreed(pet)
           
-          html += `<h3><a onclick="showPetProfile(${pet.id.$t})">${pet.name.$t}</a></h3>
-          <p>Gender: ${pet.sex.$t}</p>
-          <p>I am a ${pet.breeds.breed.$t}.</p>
-          <p>${pet.age.$t}</p>
-          <span>I live in ${pet.contact.city.$t},<span><span>${pet.contact.state.$t}</span>
-
+          html += `<div class="card-content">
+          <h3>${pet.name.$t}</h3>
+          <div id="gender">Gender: ${pet.sex.$t}</div>
+          <div id="breed">I am a ${pet.breeds.breed.$t}</div>
+          <div id="age">${pet.age.$t}</div>
+          <div id="city">I live in ${pet.contact.city.$t}</div> 
+          <div id="state">${pet.contact.state.$t}</div>
           </div>
           </div>
           </div>`
-
-
-
-          //console.log(pet)
 
 
         })
@@ -116,10 +113,14 @@ return $.ajax({
 
 }
 
-
+function findBreed(pet){
+  if(pet.breeds.breed.$t === "undefinded"){
+    return "I am a mixed breed."
+  }
+  }
 function findImage(pet){
   if(!pet.media.photos){
-    return "no pet photos"
+    return `<img class="no-photo" src="https://image.ibb.co/dRKSGa/IMG_3067.jpg"/>`
   }
  for(var c = 0; c< pet.media.photos.photo.length; c++){
   if(pet.media.photos.photo[c]['@size'] == "x") {
@@ -128,47 +129,51 @@ function findImage(pet){
 }
 }
 
+
 function showPetProfile(id) {
 
-
-
-
-
-//function showPetProfile(id)
-//{
+$("#map-container").hide();
+$("#intro").hide();
 
 
   var dogProfileHtml = 
-  `<div id="name">${petDictionary[id].name.$t}</div>
+  `<button id="go-back" onclick="$('#results').show();$('#profile-view').hide();"/>
+  <div id="background-2">
+  <div class="name">${petDictionary[id].name.$t}</div>
   <div id ="js-description">${petDictionary[id].description.$t}<div>
-  <div>I am a ${petDictionary[id].breeds.breed.$t}</div>
-  <div>And I live in ${petDictionary[id].contact.city.$t},</div> 
-  <div>${petDictionary[id].contact.state.$t}</div>
-  <div>Zip Code: ${petDictionary[id].contact.zip.$t}</div>
-  <div>Please call: ${petDictionary[id].contact.phone.$t}</div>
-  <div>Or email: ${petDictionary[id].contact.email.$t}</div>`;
+  <div id="breed">I am a ${petDictionary[id].breeds.breed.$t}</div>
+  <div id="city">And I live in ${petDictionary[id].contact.city.$t},</div> 
+  <div id="state">${petDictionary[id].contact.state.$t}</div>
+  <div id ="code">Zip Code: ${petDictionary[id].contact.zip.$t}</div>
+  <div id="phone">Please call: ${petDictionary[id].contact.phone.$t}</div>
+  <div id="email">Or email: ${petDictionary[id].contact.email.$t}</div>`;
 
   let breed = petDictionary[id].breeds.breed.$t;
-  if (petDictionary[id].mix.$t == "yes") {
-   dogProfileHtml += `<div class="mix">I am an amazing mixed breed.</div>`
- }
+  if(!petDictionary[id].breeds.breed.$t){
+    return "I am a mixed breed"
+  }
  let gender = petDictionary[id].sex.$t;
  if (petDictionary[id].sex.$t === "M") {
    dogProfileHtml += `<div class="male">I am a Male.</div>`
  }
  if(petDictionary[id].sex.$t === "F"){
   dogProfileHtml += `<div class="female">I am a Female.</div>`
-}
-
-for(var k = 0; k<petDictionary[id].media.photos.photo.length; k++){
-  if(petDictionary[id].media.photos.photo[k]['@size'] == "x") {
-    dogProfileHtml +=`<img class="profile-image" src = "${petDictionary[id].media.photos.photo[k].$t}"/>`
   }
+  
+  for(var k = 0; k<petDictionary[id].media.photos.photo.length; k++){
+    if(petDictionary[id].media.photos.photo[k]['@size'] == "x") {
+      dogProfileHtml +=`<div class="slides"><img class="profile-image" src = "${petDictionary[id].media.photos.photo[k].$t}"/>`
+                        
+    }
+  }
+
+  //$("#results").html(dogProfileHtml);
+  $("#profile-view").html(dogProfileHtml);
+  $("#profile-view").show();
+  $("#results").hide();
 }
 
 
-$("#results").html(dogProfileHtml);
-}
 
 jQuery(document).ready(function (e) {
   function t(t) {
@@ -210,6 +215,3 @@ $('input[type=radio]').change(
     
   }
   )
-
-
-

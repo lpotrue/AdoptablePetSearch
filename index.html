@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Luckiest Guy' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 
     <link rel="stylesheet" href="float.css">
@@ -17,18 +18,22 @@
 
 <body>
     <main role="main">
+    <section id="intro">
     <section id="top">
     </section>
+
         <div id="background">
             <div class="row">
                 <div class="col-12">
-
+                     </div>
                     <div class="transbox">
                         <div id="js-advanced-options">
+
                             <ul class="nav">
                                 <li class="button-dropdown">
                                     <a href="javascript:void(0)" class="dropdown-toggle">Advanced Search Options <div>▼</div></a>
                                     <ul class="dropdown-menu">
+
                                         <form>
                                             <li>
                                                 <strong><li>Gender</strong>
@@ -105,6 +110,7 @@
                         <div id="finder">
                             <ul class="nav">
 
+                            <section id="menu">
                                 <li class="button-dropdown">
                                     <a href="javascript:void(0)" class="dropdown-toggle">
                                  Menu <div>▼</div></a>
@@ -128,40 +134,43 @@
             </div>
         </div>
        </div>
-        <div id="map-border">
+        <div id="map-container">
         <h4>Click on the map to find adoptable dogs, and locate nearby shelters.</h4>
         <div id="to-top">
                 <ul class="nav">
                     <li class="button-dropdown">
                         <a href="javascript:void(0)" class="dropdown-toggle">
-                            <a href="#top">Back to Top</a>
+                            <a href="#intro">Home</a>
                                 </li>
                                     </ul></div>
          
         <section id="map">
-        <div class="row">
-        <div class="col-12">
-                    
-        </div>
-        </div>
-        </div>
+            <div class="row">
+            <div class="col-12">
+                        
+            </div>
+            </div>
+            </div>
         </section>
-
-        <section id="results">
-            <div id="dog-info-template"></div>
-        </section>
-            
-            <section id="dog-profile">
-
-            </section>
         
-    </main>
+        <section id="results">
+            
+            <div id="dog-info-template"></div>
+            <div id="card-content"></div>
+        </section>
+        
+        <div id="profile-view">
+
+        </div>
+       
+    
 
     <script src="map.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3y6Bpz0bSh9WB45wBmaFEnlkogCoBklE&callback=initMap">
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
+    </main>
 </body>
 
 </html>
