@@ -25,7 +25,7 @@ function makeApiCall(searchObj){
 var str = jQuery.param( searchObj );
 console.log(str);
 
- var url = `http://api.petfinder.com/pet.find?${str}&key=a4d4d400939b10647da19b7593286b34&output=full&format=json`;
+ var url = `https://api.petfinder.com/pet.find?${str}&key=a4d4d400939b10647da19b7593286b34&output=full&format=json`;
 
 
  console.log(url)
@@ -130,14 +130,14 @@ function findImage(pet){
 }
 
 
-function showPetProfile(id) {
+function showPetProfile(id){
 
 $("#map-container").hide();
 $("#intro").hide();
 
 
   var dogProfileHtml = 
-  `<button id="go-back" onclick="$('#results').show();$('#profile-view').hide();"/>
+  `<button id="go-back" onclick="$('#results').show();$('#intro').show();$('#map-container').show();$('#profile-view').hide();"/>
   <div id="background-2">
   <div class="name">${petDictionary[id].name.$t}</div>
   <div id ="js-description">${petDictionary[id].description.$t}<div>
