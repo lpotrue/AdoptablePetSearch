@@ -15,11 +15,8 @@
  var shelters = []; 
  
  var petDictionary = {};
-//http://api.petfinder.com/pet.find?location=97062&key=a4d4d400939b10647da19b7593286b34&output=full&format=json
-//http://api.petfinder.com/pet.getRandom?format=json&key=a4d4d400939b10647da19b7593286b34&animal=dog&output=basic
 
 function makeApiCall(searchObj){
-//http://api.petfinder.com/shelter.get?id=SD08&format=json&key=a4d4d400939b10647da19b7593286b34&animal=smallfurry&output=basic
 
 
 var str = jQuery.param( searchObj );
@@ -30,10 +27,6 @@ console.log(str);
 
  console.log(url)
  
-
-
-
- //var url = `http://api.petfinder.com/pet.find?location=${zipcode}&key=a4d4d400939b10647da19b7593286b34&output=full&format=json`;
 return $.ajax({
   type : 'GET',
   data : {},
@@ -78,19 +71,39 @@ return $.ajax({
           <div class="card"<a onclick="showPetProfile(${pet.id.$t})"></a>`
           
           html += findImage(pet)
+         
+          html += 
+          `<div class="card-content">
+          <h3>${pet.name.$t}</h3>
+          <div id="gender">Gender: ${pet.sex.$t}</div>`
+
+
           html += findBreed(pet)
           
-          html += `<div class="card-content">
-          <h3>${pet.name.$t}</h3>
-          <div id="gender">Gender: ${pet.sex.$t}</div>
-          <div id="breed">I am a ${pet.breeds.breed.$t}</div>
-          <div id="age">${pet.age.$t}</div>
-          <div id="city">I live in ${pet.contact.city.$t}</div> 
-          <div id="state">${pet.contact.state.$t}</div>
+          html += `<div id="age">${pet.age.$t}</div>
+          <div id="city">I live in ${pet.contact.city.$t},   ${pet.contact.state.$t}</div> 
           </div>
           </div>
           </div>`
+        /*html +=   
+          `<div class="col-4">
+          <div class="card"<a onclick="showPetProfile(${pet.id.$t})"></a>`
+          
+          html += findImage(pet)
+          //html += findBreed(pet)
+          
 
+
+          html += `<div class="card-content">
+          <h3>${pet.name.$t}</h3>`
+          html += `I am a${pet.age.$t.split('')[0] === 'A' ? 'n ' + pet.age.$t.toLowerCase() : ' ' + pet.age.$t.toLowerCase()}
+          ${findBreed(pet)} living  in ${pet.contact.city.$t}, ${pet.contact.state.$t} `
+
+          
+
+          html += `</div>
+          </div>
+          </div>`*/
 
         })
 
@@ -101,7 +114,6 @@ return $.ajax({
     html = "<div>" + html + "</div>"
 
     $('#results').html(html)
-      //$('#js-description').html(html)
 
     },
     error : function(request,error)
@@ -114,9 +126,14 @@ return $.ajax({
 }
 
 function findBreed(pet){
-  if(pet.breeds.breed.$t === "undefinded"){
-    return "I am a mixed breed."
+  if(pet.breeds.breed.$t === undefined){
+    return "mixed breed"
   }
+  else
+  {
+    return `${pet.breeds.breed.$t}`
+  }
+
   }
 function findImage(pet){
   if(!pet.media.photos){
@@ -137,37 +154,32 @@ $("#intro").hide();
 
 
   var dogProfileHtml = 
-  `<button id="go-back" onclick="$('#results').show();$('#intro').show();$('#map-container').show();$('#profile-view').hide();"/>
-  <div id="background-2">
-  <div class="name">${petDictionary[id].name.$t}</div>
-  <div id ="js-description">${petDictionary[id].description.$t}<div>
-  <div id="breed">I am a ${petDictionary[id].breeds.breed.$t}</div>
-  <div id="city">And I live in ${petDictionary[id].contact.city.$t},</div> 
-  <div id="state">${petDictionary[id].contact.state.$t}</div>
-  <div id ="code">Zip Code: ${petDictionary[id].contact.zip.$t}</div>
-  <div id="phone">Please call: ${petDictionary[id].contact.phone.$t}</div>
-  <div id="email">Or email: ${petDictionary[id].contact.email.$t}</div>`;
+  `<div id="background-2">
+  <a onclick="$('#results').show();$('#intro').show();$('#map-container').show();$('#profile-view').hide();">Go Back</a>
+  <div id ="js-description">
+    <div id="name">${petDictionary[id].name.$t}<div>
+    <div id="description">${petDictionary[id].description.$t}</div>
+    <div id="breed">I am a ${petDictionary[id].breeds.breed.$t}</div>
+    <div id="city">And I live in ${petDictionary[id].contact.city.$t},</div> 
+    <div id="state">${petDictionary[id].contact.state.$t}</div>
+    <div id ="code">Zip Code: ${petDictionary[id].contact.zip.$t}</div>
+    <div id="phone">Please call: ${petDictionary[id].contact.phone.$t}</div>
+    <div id="email">Or email: ${petDictionary[id].contact.email.$t}</div>`;
 
   let breed = petDictionary[id].breeds.breed.$t;
   if(!petDictionary[id].breeds.breed.$t){
     return "I am a mixed breed"
   }
- let gender = petDictionary[id].sex.$t;
- if (petDictionary[id].sex.$t === "M") {
-   dogProfileHtml += `<div class="male">I am a Male.</div>`
- }
- if(petDictionary[id].sex.$t === "F"){
-  dogProfileHtml += `<div class="female">I am a Female.</div>`
-  }
-  
-  for(var k = 0; k<petDictionary[id].media.photos.photo.length; k++){
-    if(petDictionary[id].media.photos.photo[k]['@size'] == "x") {
-      dogProfileHtml +=`<div class="slides"><img class="profile-image" src = "${petDictionary[id].media.photos.photo[k].$t}"/>`
+  if(petDictionary[id].media.photos){
+
+    for(var k = 0; k<petDictionary[id].media.photos.photo.length; k++){
+      if(petDictionary[id].media.photos.photo[k]['@size'] == "x") {
+        dogProfileHtml +=`<img class="profile-image" src = "${petDictionary[id].media.photos.photo[k].$t}"/></div></div>`
                         
+      }
     }
   }
 
-  //$("#results").html(dogProfileHtml);
   $("#profile-view").html(dogProfileHtml);
   $("#profile-view").show();
   $("#results").hide();
@@ -200,7 +212,6 @@ jQuery(document).ready(function (e) {
   })
 });
 
-//    makeApiCall($('#zipcode-input').val())
 $('input[type=radio]').change(
   function(){ 
     
@@ -215,3 +226,5 @@ $('input[type=radio]').change(
     
   }
   )
+
+
