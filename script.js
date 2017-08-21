@@ -85,25 +85,6 @@ return $.ajax({
           </div>
           </div>
           </div>`
-        /*html +=   
-          `<div class="col-4">
-          <div class="card"<a onclick="showPetProfile(${pet.id.$t})"></a>`
-          
-          html += findImage(pet)
-          //html += findBreed(pet)
-          
-
-
-          html += `<div class="card-content">
-          <h3>${pet.name.$t}</h3>`
-          html += `I am a${pet.age.$t.split('')[0] === 'A' ? 'n ' + pet.age.$t.toLowerCase() : ' ' + pet.age.$t.toLowerCase()}
-          ${findBreed(pet)} living  in ${pet.contact.city.$t}, ${pet.contact.state.$t} `
-
-          
-
-          html += `</div>
-          </div>
-          </div>`*/
 
         })
 
@@ -154,14 +135,13 @@ $("#intro").hide();
 
 
   var dogProfileHtml = 
-  `<div id="background-2">
+`<div id="background-2">
   <a onclick="$('#results').show();$('#intro').show();$('#map-container').show();$('#profile-view').hide();">Go Back</a>
   <div id ="js-description">
-    <div id="name">${petDictionary[id].name.$t}<div>
+    <div id="name">${petDictionary[id].name.$t}</div>
     <div id="description">${petDictionary[id].description.$t}</div>
     <div id="breed">I am a ${petDictionary[id].breeds.breed.$t}</div>
-    <div id="city">And I live in ${petDictionary[id].contact.city.$t},</div> 
-    <div id="state">${petDictionary[id].contact.state.$t}</div>
+    <div id="city">And I live in ${petDictionary[id].contact.city.$t},  ${petDictionary[id].contact.state.$t}</div> 
     <div id ="code">Zip Code: ${petDictionary[id].contact.zip.$t}</div>
     <div id="phone">Please call: ${petDictionary[id].contact.phone.$t}</div>
     <div id="email">Or email: ${petDictionary[id].contact.email.$t}</div>`;
@@ -174,7 +154,7 @@ $("#intro").hide();
 
     for(var k = 0; k<petDictionary[id].media.photos.photo.length; k++){
       if(petDictionary[id].media.photos.photo[k]['@size'] == "x") {
-        dogProfileHtml +=`<img class="profile-image" src = "${petDictionary[id].media.photos.photo[k].$t}"/></div></div>`
+        dogProfileHtml +=`<img class="profile-image" src = "${petDictionary[id].media.photos.photo[k].$t}"/>`
                         
       }
     }
@@ -226,5 +206,4 @@ $('input[type=radio]').change(
     
   }
   )
-
 

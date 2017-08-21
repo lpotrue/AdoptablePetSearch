@@ -7,7 +7,7 @@ main {
 }
 
 body {
-  background-color: #F0F0F0;
+  background-color: #b2cecf;
 }
 
 h1, h2 {
@@ -19,6 +19,7 @@ h1, h2 {
   padding-left: 1%;
   font-family: 'Julius Sans One', sans-serif;
   padding-bottom: 80%;
+  z-index: -1;
 }
 
 #to-top {
@@ -71,17 +72,18 @@ a[href] {
   height: 425px;
   width: 88%;
   border: 5px solid orange;
-  cursor: pointer;
+  z-index: -1;
 }
 
 #map-container {
   box-sizing: border-box;
-  background: rgba(0, 0, 0, 0.8);
+  //background: rgba(0, 0, 0, 0.8);
   background: cover;
   padding-top: 2%;
   padding-bottom: 4%;
   padding-left: 5%;
   padding-right: 5%;
+  z-index: -1;
 }
  
 #js-advanced-options {
@@ -122,7 +124,6 @@ form {
 }
 
 .nav li a {
-    display: inline-block;
     color: white;
     background-color: #000;
     padding: 10px 20px;
@@ -145,22 +146,21 @@ form {
 }
 
 .nav li .dropdown-menu {
-    display: none;
-    position: relative;
+    position: absolute;
     left: 0;
     padding: 0;
     margin: 0;
     margin-top: 3px;
     text-align: left;
-    opacity: 1.0;
 }
 
 .nav li .dropdown-menu.active {
     display: block;
+    
 }
 
-.nav li .dropdown-menu a {
-    width: 150px;
+ul li{
+  line-height: 20px;
 }
 
 h4 {
@@ -176,12 +176,18 @@ h3 {
 h3:hover{
   color: orange;
 }
+
 #background-2 {
   padding: 20px;
+  background-image: url(https://image.ibb.co/jaBjnQ/IMG_3095.jpg);
+  background-repeat: repeat;
+  color: orange;
+  font-weight: bold;
+  font: 30px;
 }
 
 #background-2 a:hover{
-  color: orange;
+  color: green;
 }
 
 h5 {
@@ -193,19 +199,28 @@ h5 {
 
 .profile-image {
   box-sizing: border-box;
-  border: 2px black;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
-#js-description, .name {
+#name{
+  margin-top: 3%;
+  padding-bottom: 3%;
+  text-decoration: underline;
+  font-weight: bold;
+  text-align: center;
+}
+
+#js-description {
   box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
   box-sizing: border-box;
-  margin-left: 25%;
-  margin-right: 25%;
+  margin-left: 18%;
+  margin-right: 18%;
   padding-right: 3%;
   padding-left: 3%;
   text-align: left;
-  line-height:;
   color: black;
+  background-color: white;
   background: rgb(255,255,0.5);
 }
   @media only screen and (max-width: 500px) {
@@ -216,14 +231,7 @@ h5 {
 }
 }
 
-#js-description #description {
-  text-align: justify;
-  color: red;
-}
-
-.name {
-  text-decoration: underline;
-  margin-bottom: 2%;
+#phone {
   padding-top: 2%;
 }
 
@@ -253,8 +261,6 @@ h5 {
   box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
 }
 
-
-
 .card-image, .no-photo {
   box-sizing: border-box;
   width: 100%;
@@ -264,7 +270,6 @@ h5 {
   opacity: 1.0;
   object-fit: cover;
   object-position: top;
-  
 }
 
 .card-content {
