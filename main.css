@@ -18,7 +18,6 @@ h1, h2 {
   text-align: left;
   padding-left: 1%;
   font-family: 'Julius Sans One', sans-serif;
-  padding-bottom: 80%;
   z-index: -1;
 }
 
@@ -26,15 +25,14 @@ h1, h2 {
 .transbox {
     box-sizing: border-box;
     margin-top: 0px;
-    background-color: black;
+    background-color: rgba(0, 0, 0, .8);
     border: 1px solid black;
-    opacity: 0.6;
-    filter: alpha(opacity=60); 
-    height: 100px;
+    filter: alpha(opacity=80); 
     width: 100%;
     color: white;
     font-weight: bold;
     position: relative; 
+    z-index: 2;
 }
 
 #background {
@@ -63,7 +61,6 @@ a[href] {
   height: 425px;
   width: 88%;
   border: 5px solid orange;
-  z-index: -1;
   opacity: 1.0;
 }
 
@@ -75,19 +72,17 @@ a[href] {
   padding-bottom: 4%;
   padding-left: 5%;
   padding-right: 5%;
-  z-index: -1;
 }
  
 #js-advanced-options {
-    margin-top: 4%;
     align-content: flex-start;
     font-weight: bold;
-    background-color: black;
     color: white;
+    z-index: 2;
   }
 
 form {
-  background-color: black;
+  //background-color: rgba(0 0 0 .8);
   color: white;
 }
 
@@ -95,7 +90,6 @@ form {
   position: absolute;
   top: 0;
   right: 0;
-  margin-top: 2%;
   font-weight: bold;
 }
 
@@ -117,14 +111,13 @@ form {
 
 .nav li a {
     color: white;
-    background-color: #000;
+    //background-color: #000;
     padding: 10px 20px;
     text-decoration: none;
 }
 
 .nav li a span {
     display: inline-block;
-    font-size: 20%;
     color: #999;
 }
 
@@ -138,13 +131,18 @@ form {
 }
 
 .nav li .dropdown-menu {
+    background-color: rgba(0, 0, 0, .8);
     position: absolute;
     left: 0;
-    padding: 0;
+    padding: 10px;
     margin: 0;
     margin-top: 3px;
     text-align: left;
     display: none;
+}
+
+.nav li .dropdown-menu.right{
+  right: 0;
 }
 
 .nav li .dropdown-menu.active {
@@ -172,10 +170,9 @@ h3:hover{
 
 #background-2 {
   padding: 20px;
-  background-image: url(https://image.ibb.co/jaBjnQ/IMG_3095.jpg);
-  background-repeat: repeat;
+  //background-image: url(https://image.ibb.co/jaBjnQ/IMG_3095.jpg);
+  //background-repeat: repeat;
   color: orange;
-  font-weight: bold;
   font: 30px;
 }
 
@@ -188,12 +185,6 @@ h5 {
   text-align: center;
   color: black;
   font-family: 'Julius Sans One', sans-serif;
-}
-
-.profile-image {
-  box-sizing: border-box;
-  padding-top: 1%;
-  padding-bottom: 1%;
 }
 
 #name{
@@ -209,17 +200,19 @@ h5 {
   box-sizing: border-box;
   margin-left: 18%;
   margin-right: 18%;
-  padding-right: 3%;
-  padding-left: 3%;
+  margin-top: 50px;
+  padding: 15px;
   text-align: left;
   color: black;
   background-color: white;
   background: rgb(255,255,0.5);
+  border: 1px grey;
+  font-family: 'Montserrat', sans-serif;
 }
   @media only screen and (max-width: 500px) {
  #js-description, .name{ 
   align-content: center;
-  margin: auto;
+  margin: 50px auto;
   width: 100%}
 }
 }
@@ -229,10 +222,10 @@ h5 {
 }
 
 .profile-image{
-  width: 100%;
+  width: 50%;
   box-sizing: border-box;
   align-content: center;
-  opacity: 1.0;
+  padding: 10px 10px 0 0 ;
 }
 
 .name:hover{
@@ -243,13 +236,21 @@ h5 {
   color: orange;
 }
 
+#breed{
+  margin-top: 20px;
+}
+
+#description{
+  margin-bottom: 20px;
+}
+
 .card {
   transition: all .3s;
   box-shadow: 1px 1px 5px black;
   color: white;
   background-color: #f4f4f4;
   margin: 10px auto;
-  height: 500px;
+  height: 600px;
   position: relative;
   box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
 }
@@ -257,32 +258,37 @@ h5 {
 .card-image, .no-photo {
   box-sizing: border-box;
   width: 100%;
-  height: 60%;
+  height: 70%;
   position: absolute;
   align-content: center;
   opacity: 1.0;
   object-fit: cover;
-  object-position: top;
 }
 
 .card-content {
+
   box-sizing: border-box;
   position: absolute;
   text-align: left;
   margin-left: 10%;
   margin-right: 10%;
   color: #222;
-  top: 60%;
+  top: 70%;
 }
 
 #go-back {
+  padding: 15px;
+  top: 10px;
   box-sizing: border-box;
-  margin-top: 3%;
+  border: 1px solid black;
   background-color: #ffffff;
   opacity: 0.6;
   filter: alpha(opacity=60); 
   font-weight: bold;
-  color: black;
-  margin-left: 80%;
+  position: absolute;
+}
+
+#go-back:active {
+  opacity: 1;
 }
 

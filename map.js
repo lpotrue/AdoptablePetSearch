@@ -73,7 +73,8 @@ function initMap() {
       data : {},
       url : url+'&callback=?' ,
       dataType: 'json',
-      success : function(data) {       
+      success : function(data) {    
+      if(!data.petfinder.shelter){ return }   
         console.log(data.petfinder.shelter)
         let lat = data.petfinder.shelter.latitude.$t;
         let lng = data.petfinder.shelter.longitude.$t;

@@ -68,7 +68,7 @@ return $.ajax({
 
           html +=   
           `<div class="col-4">
-          <div class="card"<a onclick="showPetProfile(${pet.id.$t})"></a>`
+          <div class="card" <a onclick="showPetProfile(${pet.id.$t})"></a>`
           
           html += findImage(pet)
          
@@ -129,6 +129,7 @@ function findImage(pet){
 
 
 function showPetProfile(id){
+  console.log (id)
 
 $("#map-container").hide();
 $("#intro").hide();
@@ -136,11 +137,21 @@ $("#intro").hide();
 
   var dogProfileHtml = 
 `<div id="background-2">
-  <a onclick="$('#results').show();$('#intro').show();$('#map-container').show();$('#profile-view').hide();">Go Back</a>
+  <a id="go-back" onclick="$('#results').show();$('#intro').show();$('#map-container').show();$('#profile-view').hide();">Go Back</a>
   <div id ="js-description">
     <div id="name">${petDictionary[id].name.$t}</div>
-    <div id="description">${petDictionary[id].description.$t}</div>
-    <div id="breed">I am a ${petDictionary[id].breeds.breed.$t}</div>
+    <div id="description">${petDictionary[id].description.$t}</div>`
+    if(petDictionary[id].media.photos){
+
+    for(var k = 0; k<petDictionary[id].media.photos.photo.length; k++){
+      if(petDictionary[id].media.photos.photo[k]['@size'] == "x") {
+        dogProfileHtml +=`<img class="profile-image" src = "${petDictionary[id].media.photos.photo[k].$t}"/>`
+                        
+      }
+    }
+  }
+  dogProfileHtml += 
+    `<div id="breed">I am a ${petDictionary[id].breeds.breed.$t}</div>
     <div id="city">And I live in ${petDictionary[id].contact.city.$t},  ${petDictionary[id].contact.state.$t}</div> 
     <div id ="code">Zip Code: ${petDictionary[id].contact.zip.$t}</div>
     <div id="phone">Please call: ${petDictionary[id].contact.phone.$t}</div>
@@ -150,15 +161,7 @@ $("#intro").hide();
   if(!petDictionary[id].breeds.breed.$t){
     return "I am a mixed breed"
   }
-  if(petDictionary[id].media.photos){
-
-    for(var k = 0; k<petDictionary[id].media.photos.photo.length; k++){
-      if(petDictionary[id].media.photos.photo[k]['@size'] == "x") {
-        dogProfileHtml +=`<img class="profile-image" src = "${petDictionary[id].media.photos.photo[k].$t}"/>`
-                        
-      }
-    }
-  }
+  
 
   $("#profile-view").html(dogProfileHtml);
   $("#profile-view").show();
