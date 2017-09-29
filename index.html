@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Luckiest Guy' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-
     <link rel="stylesheet" href="float.css">
     <link rel="stylesheet" href="main.css">
     
@@ -18,140 +17,104 @@
 
 <body>
     <main role="main">
-    <section id="intro">
-    <section id="top">
-    </section>
-
-        <div id="background">
-            <div class="row">
-                <div class="col-12">
-                     
-                    <div class="transbox">
-                        <div id="js-advanced-options">
-
-                            <ul class="nav">
-                                <li class="button-dropdown">
-                                    <a href="javascript:void(0)" class="dropdown-toggle">Search<span>▼</span></a>
-                                    <ul class="dropdown-menu">
-
-                                        <form>
-                                            <li>
-                                                <strong><li>Gender</strong>
-                                                <ul>
-                                                    <li>
-                                                        <input type="radio" value="M"  name="sex"> Male</li>
-                                                   
-                                                    <li>
-                                                        <input type="radio" value="F"  name="sex"> Female</li>
-                    
-                                                </ul>
-                                            </li>
-                                            <strong><li>Age</strong>
-                                            
-                                            <ul>
-                                                <li>
-                                                    <input type="radio" value="baby"  name="age">Baby</li>
-                                                
-                                                <li>
-                                                    <input type="radio" value="young"  name="age">Young</li>
-                                               
-                                                <li>
-                                                    <input type="radio" value="adult"  name="age">Adult</li>
-                                               
-                                                <li>
-                                                    <input type="radio" value="senior"  name="age">Senior</li>
-                                                
-                                            </ul>
-                                </li>
-                                <strong><li>Size</strong>
-                                
-                                <ul>
-                                    <li>
-                                        <input type="radio" value="S"  name="size">Small</li>
-                                   
-                                    <li>
-                                        <input type="radio" value="M"  name="size">Medium</li>
-                                   
-                                    <li>
-                                        <input type="radio" value="L"  name="size">Large</li>
-                                   
-                                </ul>
-                                </li>
-                                <strong><li>Animal Type</strong>
-                                
-                                <ul>
-                                    <li>
-                                        <input type="radio" value="barnyard"  name="animal">Barnyard</li>
-                                    
-                                    <li>
-                                        <input type="radio" value="dog"  name="animal">Dog</li>
-                                    
-                                    <li>
-                                        <input type="radio" value="cat"  name="animal">Cat</li>
-                                    
-                                     <li>
-                                        <input type="radio" value="bird"  name="animal">Bird</li>
-                                    
-                                     <li>
-                                        <input type="radio" value="reptile"  name="animal">Reptile</li>
-                                    
-                                     <li>
-                                        <input type="radio" value="horse"  name="animal">Horse</li>
-                                    
-                                     <li>
-                                        <input type="radio" value="smallfurry"  name="animal">Small Furry</li>
-                                   
-                                </ul>
-                                </li>
-                                </li>
-                                </li>
-                                
-                        </div>
-                        <div id="finder">
-                            <ul class="nav">
-
-                            <section id="menu">
-                                <li class="button-dropdown">
-                                    <a href="javascript:void(0)" class="dropdown-toggle">
-                                 Menu <span>▼</span></a>
-                                    <ul class="dropdown-menu right">
-                                        <li>
-                                        <a href="#map">Map</a>
-                                </li>
-                                        <li>
-            <a href="https://secure.aspca.org/donate/ps-gn-p2?ms=MP_PMK_Googlebrand-T4&initialms=MP_PMK_Googlebrand-T4&pcode=WPSE9XXGOGN2PK00014&lpcode=WPSE9XXGOGN1PK00014&gclid=EAIaIQobChMIv6XK8Nyv1QIV1oKzCh17AwKbEAAYASAAEgKSKvD_BwE">Donate</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            </li>
-                            </ul>
-                        </div>
-                        <strong><h2>Connecting people to adoptable pets.</h2></strong>
-                    </div>
-                </div>
+        
+            <div id="js-advanced-options">
             </div>
-        </div>
-       </div>
-        <div id="map-container">
-            <h4>Click on the map to find adoptable pets, and locate nearby shelters.</h4>
-        <section id="map">
+        <section id="background">
+            <h1>PetMatch</h1>
             <div class="row">
             <div class="col-12">
-                        
             </div>
-            </div>
-            </div>
+            </div>  
         </section>
-        
-        <section id="results">
-            
-            <div id="dog-info-template"></div>
-            <div id="card-content"></div>
-        </section>
-        
-        <div id="profile-view">
 
+       <form id="advanced-options"> 
+            <section id="map-container">
+                 <li class="button-dropdown">
+                <a href="javascript:void(0)" class="dropdown-toggle">Advanced Search<span>▼</span></a>
+                <ul class="dropdown-menu">
+       <h4>Click on the map to find adoptable pets, and locate nearby shelters.</h4>
+        <section id="map">
+        </section>
+       <section id="all">
+            <div id="gender">
+                <h5>Gender</h5>
+                <ul>
+                    <li>
+                        <input type="checkbox"  value="M" name="sex"> Male</li>
+                    <li>
+                        <input type="checkbox" value="F"  name="sex"> Female</li>
+                </ul>
+                </div>
+                <div id="age">
+                <h5>Age</h5>
+                <ul>
+                    <li>
+                        <input type="checkbox" value="baby"  name="age">Baby</li>
+                
+                    <li>
+                        <input type="checkbox" value="young"  name="age">Young</li>
+               
+                    <li>
+                        <input type="checkbox" value="adult"  name="age">Adult</li>
+               
+                <li>
+                    <input type="checkbox" value="senior"  name="age">Senior</li>
+            </ul>
+            </div>
+            <div id="size">
+            <h5>Size</h5>
+            <ul>
+                <li>
+                    <input type="checkbox" value="S"  name="size">Small</li>
+           
+                <li>
+                    <input type="checkbox" value="M"  name="size">Medium</li>
+           
+                <li>
+                    <input type="checkbox" value="L"  name="size">Large</li>
+            </ul>
+            </div>
+            <div id="animal">
+            <h5>Animal Type</h5>
+            <ul>
+                <li>
+                    <input type="checkbox" value="barnyard"  name="animal">Barnyard</li>
+            
+                <li>
+                    <input type="checkbox" value="dog"  name="animal">Dog</li>
+            
+                <li>
+                    <input type="checkbox" value="cat"  name="animal">Cat</li>
+            
+                <li>
+                    <input type="checkbox" value="bird"  name="animal">Bird</li>
+            
+                <li>
+                    <input type="checkbox" value="reptile"  name="animal">Reptile</li>
+            
+                <li>
+                    <input type="checkbox" value="horse"  name="animal">Horse</li>
+            
+                <li>
+                    <input type="checkbox" value="smallfurry"  name="animal">Small Furry</li>
+            </ul>
+            </div>
+            <li class="button-dropdown">
+                <a href="javascript:void(0)" class="dropdown-toggle">Minimize<span>&#9650;</span></a>
+                <ul class="dropdown-menu">
+    <div class="col-12">
+    <div class="row">
+    </div>
+    </div>
+    </section>
+    </section>
+    </form>
+    <section id="results">
+        <div id="dog-info-template"></div>
+        <div id="card-content"></div>
+    </section>
+        <div id="profile-view">
         </div>
        
     

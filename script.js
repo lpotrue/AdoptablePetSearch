@@ -57,8 +57,6 @@ return $.ajax({
      }
 
 
-
-
      if (e % 3 === 0){
             //make a new row
             html += `</div><div class="row">`
@@ -86,7 +84,9 @@ return $.ajax({
           </div>
           </div>`
 
+          $("#intro").hide();
         })
+      
 
 
 
@@ -132,12 +132,12 @@ function showPetProfile(id){
   console.log (id)
 
 $("#map-container").hide();
-$("#intro").hide();
+$("#advanced-options").hide();
 
 
   var dogProfileHtml = 
 `<div id="background-2">
-  <a id="go-back" onclick="$('#results').show();$('#intro').show();$('#map-container').show();$('#profile-view').hide();">Go Back</a>
+  <a id="go-back" onclick="$('#results').show();$('#advanced-options').show();$('#map-container').show();$('#profile-view').hide();">Go Back</a>
   <div id ="js-description">
     <div id="name">${petDictionary[id].name.$t}</div>
     <div id="description">${petDictionary[id].description.$t}</div>`
@@ -169,7 +169,6 @@ $("#intro").hide();
 }
 
 
-
 jQuery(document).ready(function (e) {
   function t(t) {
     e(t).bind("click", function (t) {
@@ -195,10 +194,10 @@ jQuery(document).ready(function (e) {
   })
 });
 
-$('input[type=radio]').change(
+$('input[type=checkbox]').change(
   function(){ 
     
-    $('input[type=radio]:checked' ).each(function () {
+    $('input[type=checkbox]:checked' ).each(function () {
 
       searchObj[this.name] = this.value
     })
