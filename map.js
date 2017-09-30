@@ -8,7 +8,6 @@ function initMap() {
     center: myLatlng
 }
 
-
   var map = new google.maps.Map(document.getElementById("map"), myOptions);
   var bounds = new google.maps.LatLngBounds();
   var geocoder = new google.maps.Geocoder()
