@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang= "en">
+    <meta charset="UTF-8">
+    <meta name='description' content='API for petfinder.com and googlemaps to help connect people to adoptable dogs in the United States'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Luckiest Guy' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link rel="stylesheet" href="float.css">
+    <link rel="stylesheet" href="main.css">
+<head>
+    <title></title>
+</head>
+<body>
+    <!--<ul class="nav">-->
+        
+                <!--<div id="finder">
+                    <ul class="nav">-->
+
+        <section id="choices">
+            <div id="map-container">
+            <h4>Click on the map to find adoptable pets, and locate nearby shelters.</h4>
+        <section id="map">
+            <div class="row">
+            <div class="col-12">
+            </div>            
+            </div>
+            </div>
+        
+        <form id="advanced-options">
+             <div class="row">
+            <div class="col-12">
+            </div>            
+            <li class="button-dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle">Advanced Search<span>▼</span></a>
+            <ul class="dropdown-menu">
+            <div id="gender">
+                <h4>Gender</h4>
+                <ul>
+                    <input type="checkbox" id="myCheck" value="M" name="sex"> Male</li>
+                <li>
+                    <input type="checkbox" id="myCheck" value="F"  name="sex"> Female</li>
+                </ul>
+            </div>
+            <div id="age">
+                <h4>Age</h4>
+                <ul>
+                    <input type="checkbox" value="baby"  name="age">Baby</li>
+                
+                <li>
+                    <input type="checkbox" value="young"  name="age">Young</li>
+               
+                <li>
+                    <input type="checkbox" value="adult"  name="age">Adult</li>
+               
+                <li>
+                    <input type="checkbox" value="senior"  name="age">Senior</li>
+            </ul>
+         </div>
+        <div id="size">
+            <h4>Size</h4>
+            <ul>
+                <input type="checkbox" value="S"  name="size">Small</li>
+           
+            <li>
+                <input type="checkbox" value="M"  name="size">Medium</li>
+           
+            <li>
+                <input type="checkbox" value="L"  name="size">Large</li>
+            </ul>
+        </div>
+        <div id="animal">
+            <h4>Animal Type</h4>
+            <ul>
+                <input type="checkbox" value="barnyard"  name="animal">Barnyard</li>
+            
+            <li>
+                <input type="checkbox" value="dog"  name="animal">Dog</li>
+            
+            <li>
+                <input type="checkbox" value="cat"  name="animal">Cat</li>
+            
+             <li>
+                <input type="checkbox" value="bird"  name="animal">Bird</li>
+            
+             <li>
+                <input type="checkbox" value="reptile"  name="animal">Reptile</li>
+            
+             <li>
+                <input type="checkbox" value="horse"  name="animal">Horse</li>
+            
+             <li>
+                <input type="checkbox" value="smallfurry"  name="animal">Small Furry</li>
+            </ul>
+        </div>
+        
+    
+        <button type="submit" value="Submit">Submit</button>
+        <button type="reset" value="Reset">Reset</button>
+    </form>
+   
+    <script src="map.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3y6Bpz0bSh9WB45wBmaFEnlkogCoBklE&callback=initMap">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

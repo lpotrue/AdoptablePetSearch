@@ -1,50 +1,66 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans);
+
+
 main {
-  font: monospace;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: #F5F5F5;
+  //background-color: #b2cecf;
 }
 
 h1, h2 {
+  position: absolute;
+  display: block;
   color: white;
   font-size: 35px;
   padding-top: 2%;
   text-align: left;
   padding-left: 1%;
-  padding-right: 20%;
   font-family: 'Julius Sans One', sans-serif;
-  padding-bottom: 80%;
-  display: block;
 }
 
-.transbox {
-    background-color: #ffffff;
+
+#advanced-options{
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, .8);
     border: 1px solid black;
-    opacity: 0.6;
-    filter: alpha(opacity=60); 
-    height: 100px;
+    filter: alpha(opacity=80); 
     width: 100%;
-    padding-left: 3%;
-    padding-top: 2%;
-    margin-bottom: 100%;
-}
-
-.transbox {
-    font-weight: bold;
+    color: white;
+    position: absolute; 
+    z-index: 2;
+    padding-right: 3%;
+    font-family: 'Julius Sans One', sans-serif;
   }
-
-.background {
-  background-image: url("https://image.ibb.co/h6C7c5/boxer.jpg");
-  background-size: cover;
+  @media only screen and (max-width: 500px) {
+ #advanced-options{ 
+  align-content: center;
+  display: table-column;
+}
 }
 
-#submit {
-  align-content: right;
-  background-color: green;
-  color: white;
-  font: 13px Helvetica, Tahoma, serif;
-  border-radius: 6px;
+#background {
+  background-image: url("https://image.ibb.co/hMHMDk/Messages_Image_2165322734.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 300px;
+  width: 100%;
+  position: relative;
+}
+@media only screen and (max-width: 500px) {
+ #background{ height: 250px}
+}
 }
 
 a {
   text-decoration: none;
+}
+
+a[href] {
+  cursor: pointer;
 }
  
 #map {
@@ -52,32 +68,29 @@ a {
   margin-right: 5%;
   height: 425px;
   width: 88%;
-  border: 4px solid orange;
+  border: 5px solid orange;
+  opacity: 1.0;
 }
 
-#map-border {
-  opacity: 0.6;
-  filter: alpha(opacity=60); 
-  padding-top: 5%;
-  padding-bottom: 5%;
-  background-color: grey;
+#map-container {
+  box-sizing: border-box;
+  //background: rgba(0, 0, 0, 0.8);
   background: cover;
+  padding-top: 2%;
+  padding-bottom: 4%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
  
-#advanced-options {
-    float: right;
-    margin-right: 10%;
+#js-advanced-options {
+    align-content: flex-start;
     font-weight: bold;
-    background-color: white;
-    color: black;
+    color: white;
+    z-index: 2;
   }
 
-form {
-  background-color: white;
-}
-
 #finder{
-  margin-left: 10%;
+  position: absolute;
   font-weight: bold;
 }
 
@@ -85,31 +98,25 @@ form {
     display: block;
     font: 13px Helvetica, Tahoma, serif;
     text-transform: uppercase;
-    margin: 0; 
-    padding: 0;
 }
 
 .nav li {
-    display: inline-block;
+    display: block;
     list-style: none;
 }
 
 .nav .button-dropdown {
     position: relative;
+
 }
 
 .nav li a {
-    display: block;
-    color: #333;
-    background-color: #fff;
-    padding: 10px 20px;
+    color: white;
     text-decoration: none;
 }
 
 .nav li a span {
     display: inline-block;
-    margin-left: 5px;
-    font-size: 20%;
     color: #999;
 }
 
@@ -121,55 +128,186 @@ form {
 .nav li a:hover span, .nav li a.dropdown-toggle.active span {
     color: #fff;
 }
-
-.nav li .dropdown-menu {
-    display: none;
+.nav li .dropdown-menu{
+    background-color: rgba(0, 0, 0, .8);
     position: absolute;
-    left: 0;
-    padding: 0;
-    margin: 0;
-    margin-top: 3px;
-    text-align: left;
+    text-align: right;
+}
+
+.nav li .dropdown-menu.right{
+  right: 0;
 }
 
 .nav li .dropdown-menu.active {
     display: block;
+    
 }
 
-.nav li .dropdown-menu a {
-    width: 150px;
+ul li {
+  text-decoration: none;
+  line-height: 25px;
+}
+
+li {
+  list-style-type: none;
+  }
+
+h4 {
+  text-align: center;
+  color: white;
+  font-family: 'Julius Sans One', sans-serif;
 }
 
 h3 {
-  margin-top: 3%;
   text-decoration: underline;
-  background-color: orange;
-  height: 12%;
-  width: 100%;
+}
+
+h3:hover{
+  color: orange;
+}
+
+#background-2 {
+  padding: 20px;
+  color: orange;
+  font: 30px;
+}
+
+#background-2 a:hover{
+  color: green;
+}
+
+h5 {
+  text-decoration: underline;
+  font-weight: 50px bold;
+  text-align: center;
+  color: white;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+#name{
+  margin-top: 3%;
+  padding-bottom: 3%;
+  text-decoration: underline;
+  font-weight: bold;
   text-align: center;
 }
 
-.box {
+#js-description {
+  box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
   box-sizing: border-box;
-  border: 1px solid grey;
+  margin-left: 18%;
+  margin-right: 18%;
+  margin-top: 50px;
+  padding: 15px;
+  text-align: left;
+  color: black;
+  background-color: white;
+  background: rgb(255,255,0.5);
+  border: 1px grey;
+  text-overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+  @media only screen and (max-width: 500px) {
+ #js-description, .name{ 
+  align-content: center;
+  margin: 50px auto;
+  width: 100%}
+}
+}
+
+
+#phone {
+  padding-top: 2%;
+}
+
+.profile-image{
+  width: 50%;
+  box-sizing: border-box;
+  align-content: center;
+  padding: 10px 10px 0 0 ;
+}
+
+.name:hover{
+  color: orange;
+}
+
+.name:active{
+  color: green;
+}
+
+#breed{
+  margin-top: 20px;
+}
+
+#description{
   margin-bottom: 20px;
+  text-overflow: hidden;
 }
 
- 
-.box-image {
-  width: 100%;
+.card {
+  transition: all .3s;
+  box-shadow: 1px 1px 5px black;
+  color: white;
+  background-color: #f4f4f4;
+  margin: 10px auto;
+  height: 600px;
+  position: relative;
+  box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
 }
 
-#petfinderInfo, p, span {
+.card-image, .no-photo {
   box-sizing: border-box;
-  height: 20%;
-  display: block;
-  margin-left: 15%;
-  margin-right: 15%;
-  word-spacing: normal;
+  width: 100%;
+  height: 70%;
+  position: absolute;
+  align-content: center;
+  opacity: 1.0;
+  object-fit: cover;
 }
 
-#detail {
-  display: hidden;
+.card-content {
 
+  box-sizing: border-box;
+  position: absolute;
+  text-align: left;
+  margin-left: 10%;
+  margin-right: 10%;
+  color: #222;
+  top: 70%;
 }
+
+#go-back {
+  padding: 15px;
+  top: 316px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  background-color: #ffffff;
+  opacity: 0.6;
+  filter: alpha(opacity=60); 
+  font-weight: bold;
+  position: absolute;
+  box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
+}
+@media only screen and (max-width: 500px) {
+ #go-back{ top: 257px}
+}
+}
+
+#go-back:active {
+  opacity: 1;
+}
+
+#gender, #age, #size, #animal {
+  display: table-cell;
+  margin: auto;
+}
+@media only screen and (max-width: 500px) {
+ #gender, #age, #size, #animal { display: table-column;}
+}
+}
+
+#all {
+  position: relative;
+  align-content: center;
+}
+
