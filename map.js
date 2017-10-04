@@ -1,10 +1,9 @@
-
 var searchObj = {"location": 97219}
 function initMap() {
   var myLatlng = new google.maps.LatLng(40.2010 , -98.9836);
   var myOptions = {
-    zoom: 4, 
-    scrollwheel: false,
+    zoom: 3, 
+    scrollwheel: true,
     center: myLatlng
 }
 
@@ -15,8 +14,7 @@ function initMap() {
 
   google.maps.event.addListener(map, 'click', function(event) {
     geocoder.geocode({
-      'latLng': event.latLng
-    }, function(results, status) {
+      'latLng': event.latLng}, function(results, status) {
       console.log(results)
 
       if (status == google.maps.GeocoderStatus.OK) {
@@ -49,7 +47,7 @@ function initMap() {
                bounds.extend(marker.getPosition());
                map.fitBounds(bounds);
 
-	       for(var s=0; s<shelters.length; s++){
+         for(var s=0; s<shelters.length; s++){
           makeMoreCalls(shelters[s])
           }
 
@@ -83,7 +81,7 @@ function initMap() {
           title:data.petfinder.shelter.name.$t
 
         });
-        markers.push(marker) 		
+        markers.push(marker)    
         marker.setMap(map);  
         bounds.extend(marker.getPosition());
         map.fitBounds(bounds);
@@ -107,7 +105,7 @@ function initMap() {
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
       }
-    })		
+    })    
 
    }  
  }

@@ -6,8 +6,7 @@ main {
 }
 
 body {
-  background-color: #F5F5F5;
-  //background-color: #b2cecf;
+  background-color: #F5F5DC;
 }
 
 h1, h2 {
@@ -29,17 +28,10 @@ h1, h2 {
     filter: alpha(opacity=80); 
     width: 100%;
     color: white;
-    position: absolute; 
+    position: relative; 
     z-index: 2;
-    padding-right: 3%;
     font-family: 'Julius Sans One', sans-serif;
   }
-  @media only screen and (max-width: 500px) {
- #advanced-options{ 
-  align-content: center;
-  display: table-column;
-}
-}
 
 #background {
   background-image: url("https://image.ibb.co/hMHMDk/Messages_Image_2165322734.jpg");
@@ -64,17 +56,26 @@ a[href] {
 }
  
 #map {
-  margin-left: 5%;
-  margin-right: 5%;
-  height: 425px;
-  width: 88%;
+  height: 350px;
+  width: 80%;
+  margin-left: 7%;
+  margin-left: 7%;
   border: 5px solid orange;
   opacity: 1.0;
+  cursor: pointer;
+  margin: auto;
 }
+@media only screen and (max-width: 635px) {
+ #map{ zoom: 100%;
+       width: 88%;
+      margin-left: 2%;
+      margin-right: 5%;}
+}
+}
+
 
 #map-container {
   box-sizing: border-box;
-  //background: rgba(0, 0, 0, 0.8);
   background: cover;
   padding-top: 2%;
   padding-bottom: 4%;
@@ -82,38 +83,6 @@ a[href] {
   padding-right: 5%;
 }
  
-#js-advanced-options {
-    align-content: flex-start;
-    font-weight: bold;
-    color: white;
-    z-index: 2;
-  }
-
-#finder{
-  position: absolute;
-  font-weight: bold;
-}
-
-.nav {
-    display: block;
-    font: 13px Helvetica, Tahoma, serif;
-    text-transform: uppercase;
-}
-
-.nav li {
-    display: block;
-    list-style: none;
-}
-
-.nav .button-dropdown {
-    position: relative;
-
-}
-
-.nav li a {
-    color: white;
-    text-decoration: none;
-}
 
 .nav li a span {
     display: inline-block;
@@ -128,24 +97,10 @@ a[href] {
 .nav li a:hover span, .nav li a.dropdown-toggle.active span {
     color: #fff;
 }
-.nav li .dropdown-menu{
-    background-color: rgba(0, 0, 0, .8);
-    position: absolute;
-    text-align: right;
-}
-
-.nav li .dropdown-menu.right{
-  right: 0;
-}
-
-.nav li .dropdown-menu.active {
-    display: block;
-    
-}
 
 ul li {
   text-decoration: none;
-  line-height: 25px;
+  align-items: middle;
 }
 
 li {
@@ -160,6 +115,7 @@ h4 {
 
 h3 {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 h3:hover{
@@ -178,10 +134,16 @@ h3:hover{
 
 h5 {
   text-decoration: underline;
-  font-weight: 50px bold;
+  font-weight: bold;
   text-align: center;
   color: white;
   font-family: 'Julius Sans One', sans-serif;
+  font-size: 18px;
+}
+@media only screen and (max-width: 600px) {
+ h5 { font-size: 15px;
+      line-height: 2vw;}
+ }
 }
 
 #name{
@@ -207,11 +169,12 @@ h5 {
   text-overflow: hidden;
   font-family: 'Montserrat', sans-serif;
 }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 600px) {
  #js-description, .name{ 
   align-content: center;
   margin: 50px auto;
-  width: 100%}
+  width: 100%;
+  text-overflow: hidden;}
 }
 }
 
@@ -266,14 +229,13 @@ h5 {
 }
 
 .card-content {
-
   box-sizing: border-box;
   position: absolute;
   text-align: left;
   margin-left: 10%;
   margin-right: 10%;
   color: #222;
-  top: 70%;
+  top: 68%;
 }
 
 #go-back {
@@ -287,9 +249,10 @@ h5 {
   font-weight: bold;
   position: absolute;
   box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
+  cursor: pointer;
 }
 @media only screen and (max-width: 500px) {
- #go-back{ top: 257px}
+ #go-back{ top: 257px;}
 }
 }
 
@@ -297,17 +260,36 @@ h5 {
   opacity: 1;
 }
 
-#gender, #age, #size, #animal {
-  display: table-cell;
+#all {
+  box-sizing: border-box;
+  height: 22%;
+  width: 90%;
+  position: relative;
+  align-content: center;
+  vertical-align: middle;
+  display: flex;
   margin: auto;
 }
-@media only screen and (max-width: 500px) {
- #gender, #age, #size, #animal { display: table-column;}
+@media only screen and (max-width: 600px){
+  #all{display: table-cell;
+  }
+  }
+}
+
+.gender, .age, .size, .animal {
+  display: table-cell;
+  margin: auto;
+  font-size: 18px;
+  align-self: middle;
+}
+@media only screen and (max-width: 650px) {
+ .gender, .age, .size, .animal{ font-size: 15px;
+                                line-height: 4vw;
+                                float: left;}
 }
 }
 
-#all {
-  position: relative;
-  align-content: center;
+input {
+  cursor: pointer;
 }
 

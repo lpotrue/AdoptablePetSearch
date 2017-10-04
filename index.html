@@ -12,13 +12,11 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link rel="stylesheet" href="float.css">
     <link rel="stylesheet" href="main.css">
-    
 </head>
 
 <body>
     <main role="main">
-        
-            <div id="js-advanced-options">
+        <div id="js-advanced-options">
             </div>
         <section id="background">
             <h1>PetMatch</h1>
@@ -28,54 +26,28 @@
             </div>  
         </section>
 
-       <form id="advanced-options"> 
-            <section id="map-container">
-                 <li class="button-dropdown">
-                <a href="javascript:void(0)" class="dropdown-toggle">Advanced Search<span>▼</span></a>
-                <ul class="dropdown-menu">
+       <form id="advanced-options">
+            <div class="row">
+            <div class="col-12"> 
+        <section id="map-container">
+            <li class="button-dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle">Advanced Search<span>▼</span></a>
+            <ul class="dropdown-menu">
        <h4>Click on the map to find adoptable pets, and locate nearby shelters.</h4>
         <section id="map">
         </section>
-       <section id="all">
-            <div id="gender">
-                <h5>Gender</h5>
-                <ul>
-                    <li>
-                        <input type="checkbox"  value="M" name="sex"> Male</li>
-                    <li>
-                        <input type="checkbox" value="F"  name="sex"> Female</li>
-                </ul>
-                </div>
-                <div id="age">
-                <h5>Age</h5>
-                <ul>
-                    <li>
-                        <input type="checkbox" value="baby"  name="age">Baby</li>
-                
-                    <li>
-                        <input type="checkbox" value="young"  name="age">Young</li>
-               
-                    <li>
-                        <input type="checkbox" value="adult"  name="age">Adult</li>
-               
-                <li>
-                    <input type="checkbox" value="senior"  name="age">Senior</li>
-            </ul>
-            </div>
-            <div id="size">
-            <h5>Size</h5>
+       <div id="all">
+            <div class="gender">
+            <h5>Gender</h5>
             <ul>
                 <li>
-                    <input type="checkbox" value="S"  name="size">Small</li>
-           
+                    <input type="checkbox" value="M" name="sex"> Male</li>
+
                 <li>
-                    <input type="checkbox" value="M"  name="size">Medium</li>
-           
-                <li>
-                    <input type="checkbox" value="L"  name="size">Large</li>
+                    <input type="checkbox" value="F" name="sex"> Female</li>
             </ul>
             </div>
-            <div id="animal">
+            <div class="animal">
             <h5>Animal Type</h5>
             <ul>
                 <li>
@@ -100,16 +72,36 @@
                     <input type="checkbox" value="smallfurry"  name="animal">Small Furry</li>
             </ul>
             </div>
-            <li class="button-dropdown">
-                <a href="javascript:void(0)" class="dropdown-toggle">Minimize<span>&#9650;</span></a>
-                <ul class="dropdown-menu">
-    <div class="col-12">
-    <div class="row">
+            <div class="age">
+            <h5>Age</h5>
+            <ul>
+                <li>
+                    <input type="checkbox" value="baby"  name="age">Baby</li>
+            
+                <li>
+                    <input type="checkbox" value="young"  name="age">Young</li>
+           
+                <li>
+                    <input type="checkbox" value="adult"  name="age">Adult</li>
+           
+                 <li>
+                    <input type="checkbox" value="senior"  name="age">Senior</li>
+            </ul>
+            </div>
+            <div class="size">
+            <h5>Size</h5>
+            <ul>
+                <li><input type="checkbox" value="S"  name="size">Small</li>
+                <li><input type="checkbox" value="M"  name="size">Medium</li>
+                <li><input type="checkbox" value="L"  name="size">Large</li>
+            </ul>
+            </div>
+            </div>
+        </section>
+        </form>
     </div>
     </div>
-    </section>
-    </section>
-    </form>
+        
     <section id="results">
         <div id="dog-info-template"></div>
         <div id="card-content"></div>
