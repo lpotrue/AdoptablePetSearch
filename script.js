@@ -134,7 +134,6 @@ function showPetProfile(id){
 $("#map-container").hide();
 $("#advanced-options").hide();
 
-
   var dogProfileHtml = 
 `<div id="background-2">
   <a id="go-back" onclick="$('#results').show();$('#advanced-options').show();$('#map-container').show();$('#profile-view').hide();">Go Back</a>
@@ -155,7 +154,7 @@ $("#advanced-options").hide();
     <div id="city">And I live in ${petDictionary[id].contact.city.$t},  ${petDictionary[id].contact.state.$t}</div> 
     <div id ="code">Zip Code: ${petDictionary[id].contact.zip.$t}</div>
     <div id="phone">Please call: ${petDictionary[id].contact.phone.$t}</div>
-    <div id="email">Or email: ${petDictionary[id].contact.email.$t}</div>`;
+    <div id="email"><a href="mailto:${petDictionary[id].contact.email.$t}"</a></div>`;
 
   let breed = petDictionary[id].breeds.breed.$t;
   if(!petDictionary[id].breeds.breed.$t){
