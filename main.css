@@ -23,13 +23,15 @@ h1, h2 {
 
 #advanced-options{
     box-sizing: border-box;
+    width: 100%;
     background-color: rgba(0, 0, 0, .8);
     border: 1px solid black;
     filter: alpha(opacity=80); 
-    width: 100%;
     color: white;
     position: relative; 
     z-index: 2;
+    margin: auto;
+    box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
     font-family: 'Julius Sans One', sans-serif;
   }
 
@@ -57,7 +59,7 @@ a[href] {
  
 #map {
   height: 350px;
-  width: 80%;
+  max-width: 600px;
   margin-left: 7%;
   margin-left: 7%;
   border: 5px solid orange;
@@ -65,11 +67,11 @@ a[href] {
   cursor: pointer;
   margin: auto;
 }
-@media only screen and (max-width: 635px) {
+@media only screen and (max-width: 575px) {
  #map{ zoom: 100%;
        width: 88%;
-      margin-left: 2%;
-      margin-right: 5%;}
+       margin-left: 2%;
+       margin-right: 5%;}
 }
 }
 
@@ -264,17 +266,17 @@ h5 {
   box-sizing: border-box;
   height: 22%;
   width: 90%;
+  margin-left: 15%;
   position: relative;
   align-content: center;
   vertical-align: middle;
-  display: flex;
-  margin: auto;
+  display: inline-flex;
 }
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 660px){
   #all{display: table-cell;
   }
   }
-}
+  }
 
 .gender, .age, .size, .animal {
   display: table-cell;
