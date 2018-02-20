@@ -58,7 +58,6 @@ return $.ajax({
 
 
      if (e % 3 === 0){
-            //make a new row
             html += `</div><div class="row">`
 
           }
@@ -140,15 +139,15 @@ $("#advanced-options").hide();
   <div id ="js-description">
     <div id="name">${petDictionary[id].name.$t}</div>
     <div id="description">${petDictionary[id].description.$t}</div>`
-    if(petDictionary[id].media.photos){
-
+ 
+     if(petDictionary[id].media.photos){
     for(var k = 0; k<petDictionary[id].media.photos.photo.length; k++){
       if(petDictionary[id].media.photos.photo[k]['@size'] == "x") {
         dogProfileHtml +=`<img class="profile-image" src = "${petDictionary[id].media.photos.photo[k].$t}"/>`
-                        
-      }
-    }
   }
+    } 
+   }
+  
   dogProfileHtml += 
     `<div id="breed">I am a ${petDictionary[id].breeds.breed.$t}</div>
     <div id="city">And I live in ${petDictionary[id].contact.city.$t},  ${petDictionary[id].contact.state.$t}</div> 
@@ -161,7 +160,7 @@ $("#advanced-options").hide();
     return "I am a mixed breed"
   }
   
-
+  $()
   $("#profile-view").html(dogProfileHtml);
   $("#profile-view").show();
   $("#results").hide();
