@@ -277,7 +277,7 @@ input {
   cursor: pointer;
 }
 
-#all {
+/*#all {
   box-sizing: border-box;
   height: 350px;
   width: 600px;
@@ -291,10 +291,15 @@ input {
 @media only screen and (max-width: 750px){
   #all{display: table-cell;}
   }
-  
+
+.gender, .age, .size, .animal{
+  border-bottom: 1px solid white;
+  margin-left: 10%;
+  margin-right: 10%;
+}
 
 .gender, .age, .size, .animal {
-  display: table-cell;
+  //display: table-cell;
   margin: auto;
   font-size: 18px;
   align-self: middle;
@@ -305,4 +310,98 @@ input {
                                 line-height: 4vw;
                                 float: left;}
 }
+
+#rank, #rank1, #rank2, #rank3, #rank4{
+  
+  margin-bottom: 2%;
+}*/
+@media only screen and (max-width: 500px) {
+      #all{
+          width: 100%;
+  }
+}
+
+
+.gender{
+  padding-bottom: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+  display: inline-block;
+  color: white;
+}
+@media only screen and (min-width: 700px) {
+        .gender{ margin-left: 20%;
+    }
+}
+@media only screen and (max-width: 500px){
+       .gender{ margin-left: 0;
+   }
+}
+
+.age{
+  padding-bottom: 5%;
+  margin-right: 10%;
+  float: right;
+  display: inline-block;
+  color: white;
+}
+@media only screen and (min-width: 700px) {
+      .age{ margin-right: 20%;
+
+  }
+}
+@media only screen and (max-width: 500px){
+       .age{ margin-right: 0;
+   }
+}
+
+#age{
+  display: table;
+}
+
+.size{
+  float: right;
+  margin-right: 10%;
+  display: inline-block;
+  color: white;
+}
+@media only screen and (min-width: 700px) {
+        .size{ margin-right: 20%;
+
+ }
+}
+@media only screen and (max-width: 500px){
+       .size {margin-right: 0;
+   }
+}
+
+#size{
+  display: table;
+  
+}
+
+.animal{
+  margin-left: 10%;
+  display: inline-block;
+  color: white;
+}
+@media only screen and (min-width: 700px) {
+      .animal{ margin-left: 20%;
+
+}
+}
+@media only screen and (max-width: 500px){
+       .animal{ margin-left: 0;
+   }
+}
+
+#together{
+  display: initial;
+  padding-bottom: 6%;
+}
+@media only screen and (max-width: 500px){
+      #together{display: inline-block;
+                width: 100%;
+  }
+      }
 
